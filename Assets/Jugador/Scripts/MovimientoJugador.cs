@@ -29,6 +29,8 @@ public class JugadorMovimiento : MonoBehaviour
 
     private bool _inputActivado = true;
 
+    public Vector2 Direccion=>_direccion;
+
     private void Awake()
     {
         _controles = new ControlesJugador();

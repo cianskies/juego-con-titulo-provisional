@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Suelo
+    uniqueID: 2531537671
+    locked: 0
+  - name: Paredes
+    uniqueID: 4154989911
+    locked: 0
+  - name: Props
+    uniqueID: 206369201
+    locked: 0
+  - name: Jugador
+    uniqueID: 2233631731
+    locked: 0
+  - name: Items
+    uniqueID: 3417852039
+    locked: 0
+  - name: UI
+    uniqueID: 2432072739
+    locked: 0
