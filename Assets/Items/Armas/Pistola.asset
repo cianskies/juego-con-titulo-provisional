@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   Icono: {fileID: 21300000, guid: 8b1d2ac1a57fea940b8cafa0ded82392, type: 3}
-  Nombre: 
-  tipo: 0
+  Nombre: Pistolita
+  tipo: 2
   rango: 0
   Ataque: 10
   CosteMp: 0
