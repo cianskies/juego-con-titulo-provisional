@@ -70,15 +70,11 @@ public class JugadorMovimiento : MonoBehaviour
         _velocidadActual = Mathf.Clamp(_direccion.magnitude, 0.0f, 1.0f);
 
 
-
-        
-        
-
     }
     private void MoverJugador()
     {
         
-        _rb.MovePosition(_rb.position+_direccion * _velocidad*Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position+_direccion * _velocidadActual*Time.fixedDeltaTime);
         
     }
     private void AnimarMovimiento()
@@ -87,13 +83,13 @@ public class JugadorMovimiento : MonoBehaviour
             _animator.SetFloat("DireccionX", _direccion.x);
             _animator.SetFloat("DireccionY", _direccion.y);
 
-            if (_direccion.x < 0)
-            {
-                _spriteRenderer.flipX = true;
-            }
-            else
+            if (_direccion.x >= 0.1f)
             {
                 _spriteRenderer.flipX = false;
+            }
+            else if (_direccion.x < 0f)
+            {
+                _spriteRenderer.flipX = true;
             }
 
         }
@@ -111,10 +107,10 @@ public class JugadorMovimiento : MonoBehaviour
     }
     private IEnumerator IESprint()
     {
-        _velocidad = _velocidadSprint;
+        _velocidadActual = _velocidadSprint;
         _inputActivado = false;
         yield return new WaitForSeconds(_duracionSprint);
-        _velocidad = _velocidadMax;
+        _velocidadActual = _velocidadMax;
         _inputActivado = true;
         
     }

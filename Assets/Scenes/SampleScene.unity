@@ -196,6 +196,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3373619242102494166, guid: f44f1c4b9fed67546b5352828e54a062, type: 3}
   m_PrefabInstance: {fileID: 59052107913473915}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1009584725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8005174590270158224, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
+  m_PrefabInstance: {fileID: 1849615138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1849615138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,6 +209,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1596446541999860536, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
+      propertyPath: _armaPosicionRotacion
+      value: 
+      objectReference: {fileID: 1009584725}
     - target: {fileID: 3380290520188894690, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.79
