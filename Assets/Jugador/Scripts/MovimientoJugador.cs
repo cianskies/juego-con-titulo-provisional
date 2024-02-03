@@ -7,7 +7,7 @@ public class JugadorMovimiento : MonoBehaviour
     // Start is called before the first frame update
     [Header("Speec")]
     private float _velocidadMax=7;
-    private float _velocidadActual;
+    [SerializeField]private float _velocidadActual;
 
     [Header("Sprint")]
      private float _velocidadSprint=20;
@@ -41,7 +41,7 @@ public class JugadorMovimiento : MonoBehaviour
     }
     void Start()
     {
-        _velocidad = _velocidadMax;
+        _velocidadActual = _velocidadMax;
         _controles.Sprint.Sprint.performed += ctx => Esprintar();
     }
     private void Update()

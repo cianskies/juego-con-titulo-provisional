@@ -91,11 +91,39 @@
                 {
                     "name": "",
                     "id": "a9e3ca58-6824-4bda-a111-427904d311a0",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Hit",
+            "id": "11b674de-4208-4bf6-b11e-69e56d969b5d",
+            "actions": [
+                {
+                    "name": "Hit",
+                    "type": "Button",
+                    "id": "ef537006-4ce0-44d0-844c-4fe28ce368ca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "76043a7e-5c49-448a-9296-f631024131a1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

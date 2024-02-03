@@ -113,11 +113,39 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a9e3ca58-6824-4bda-a111-427904d311a0"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Hit"",
+            ""id"": ""11b674de-4208-4bf6-b11e-69e56d969b5d"",
+            ""actions"": [
+                {
+                    ""name"": ""Hit"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef537006-4ce0-44d0-844c-4fe28ce368ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""76043a7e-5c49-448a-9296-f631024131a1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -132,6 +160,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         // Sprint
         m_Sprint = asset.FindActionMap("Sprint", throwIfNotFound: true);
         m_Sprint_Sprint = m_Sprint.FindAction("Sprint", throwIfNotFound: true);
+        // Hit
+        m_Hit = asset.FindActionMap("Hit", throwIfNotFound: true);
+        m_Hit_Hit = m_Hit.FindAction("Hit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -281,6 +312,52 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
         }
     }
     public SprintActions @Sprint => new SprintActions(this);
+
+    // Hit
+    private readonly InputActionMap m_Hit;
+    private List<IHitActions> m_HitActionsCallbackInterfaces = new List<IHitActions>();
+    private readonly InputAction m_Hit_Hit;
+    public struct HitActions
+    {
+        private @ControlesJugador m_Wrapper;
+        public HitActions(@ControlesJugador wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Hit => m_Wrapper.m_Hit_Hit;
+        public InputActionMap Get() { return m_Wrapper.m_Hit; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(HitActions set) { return set.Get(); }
+        public void AddCallbacks(IHitActions instance)
+        {
+            if (instance == null || m_Wrapper.m_HitActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_HitActionsCallbackInterfaces.Add(instance);
+            @Hit.started += instance.OnHit;
+            @Hit.performed += instance.OnHit;
+            @Hit.canceled += instance.OnHit;
+        }
+
+        private void UnregisterCallbacks(IHitActions instance)
+        {
+            @Hit.started -= instance.OnHit;
+            @Hit.performed -= instance.OnHit;
+            @Hit.canceled -= instance.OnHit;
+        }
+
+        public void RemoveCallbacks(IHitActions instance)
+        {
+            if (m_Wrapper.m_HitActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IHitActions instance)
+        {
+            foreach (var item in m_Wrapper.m_HitActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_HitActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public HitActions @Hit => new HitActions(this);
     public interface IMovimientoActions
     {
         void OnMover(InputAction.CallbackContext context);
@@ -288,5 +365,9 @@ public partial class @ControlesJugador: IInputActionCollection2, IDisposable
     public interface ISprintActions
     {
         void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IHitActions
+    {
+        void OnHit(InputAction.CallbackContext context);
     }
 }

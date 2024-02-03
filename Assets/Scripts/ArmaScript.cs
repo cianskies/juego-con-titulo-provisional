@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ArmaScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Referencias")]
+    [SerializeField] protected Transform _posicionDisparo;
+    [SerializeField] protected Arma _arma;
 
-    // Update is called once per frame
-    void Update()
+    private int _hitAnim = Animator.StringToHash("Hit");
+    private Animator _animator;
+
+
+    private void Awake()
     {
-        
+        _animator = GetComponent<Animator>();
+    }
+    public void AnimarHit()
+    {
+        _animator.SetTrigger(_hitAnim);
+    }
+    public virtual void UsarArma()
+    {
+
     }
 }
