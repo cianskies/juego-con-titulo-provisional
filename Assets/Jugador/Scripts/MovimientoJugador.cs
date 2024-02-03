@@ -7,7 +7,7 @@ public class JugadorMovimiento : MonoBehaviour
     // Start is called before the first frame update
     [Header("Speec")]
     private float _velocidadMax=7;
-    private float _velocidadActual;
+    [SerializeField]private float _velocidadActual;
 
     [Header("Sprint")]
      private float _velocidadSprint=20;
@@ -41,7 +41,7 @@ public class JugadorMovimiento : MonoBehaviour
     }
     void Start()
     {
-        _velocidad = _velocidadMax;
+        _velocidadActual = _velocidadMax;
         _controles.Sprint.Sprint.performed += ctx => Esprintar();
     }
     private void Update()
@@ -78,7 +78,7 @@ public class JugadorMovimiento : MonoBehaviour
     private void MoverJugador()
     {
         
-        _rb.MovePosition(_rb.position+_direccion * _velocidad*Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position+_direccion * _velocidadActual*Time.fixedDeltaTime);
         
     }
     private void AnimarMovimiento()
@@ -111,10 +111,10 @@ public class JugadorMovimiento : MonoBehaviour
     }
     private IEnumerator IESprint()
     {
-        _velocidad = _velocidadSprint;
+        _velocidadActual = _velocidadSprint;
         _inputActivado = false;
         yield return new WaitForSeconds(_duracionSprint);
-        _velocidad = _velocidadMax;
+        _velocidadActual = _velocidadMax;
         _inputActivado = true;
         
     }
