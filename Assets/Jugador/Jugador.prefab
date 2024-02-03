@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2677823964780557672}
   - component: {fileID: 4587998486111430354}
   - component: {fileID: 8333606629809860282}
-  - component: {fileID: 1596446541999860536}
+  - component: {fileID: 3156087570532921711}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f4cfa2cf87e4b45bbc55ce8839a49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _velocidadActual: 0
   _sprintActivado: 0
 --- !u!50 &2677823964780557672
 Rigidbody2D:
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsJugador: {fileID: 11400000, guid: 221d8bc89eb7bc34895ff8948289beb6, type: 2}
---- !u!114 &1596446541999860536
+--- !u!114 &3156087570532921711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,8 +251,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6922709847740295850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a05a97d494c714c8fbf2820be201ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c85094c59178cd4fac679ab06583de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arma1: {fileID: 2708512986326683522, guid: ade90c2c4a13e4340babd47ac958365d, type: 3}
-  _armaPosicion: {fileID: 8005174590270158224}
+  _arma1: {fileID: 2708512986326683522, guid: eeea22704c447764e80e188f93a47a06, type: 3}
+  _armaPosicionRotacion: {fileID: 8005174590270158224}
