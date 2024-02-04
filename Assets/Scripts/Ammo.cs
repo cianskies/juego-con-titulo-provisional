@@ -18,7 +18,12 @@ public class Ammo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.GetComponent<IRecbirDanho>()!=null)
+        {
+            collision.GetComponent<IRecbirDanho>().RecibirDanho(1);
+            Destroy(gameObject);
+        }
+            
     }
 
 }

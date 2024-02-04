@@ -17,7 +17,7 @@ MonoBehaviour:
   Nombre: Pistolita
   Tipo: 0
   Rango: 0
-  Ataque: 10
+  Ataque: 1
   CosteMp: 0
   Delay: 0.2
   DispersionMin: -3

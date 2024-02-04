@@ -11,16 +11,16 @@ TagManager:
   - 
   - Water
   - UI
+  - Suelo
+  - Pared
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Item
+  - PNJ
+  - Ammo
+  - Props
   - 
   - 
   - 

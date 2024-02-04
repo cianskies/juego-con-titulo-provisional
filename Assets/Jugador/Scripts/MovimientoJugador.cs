@@ -67,7 +67,7 @@ public class JugadorMovimiento : MonoBehaviour
     }
     private void GetInput()
     {
-        _direccion = _controles.Movimiento.Mover.ReadValue<Vector2>().normalized;
+        _direccion = _controles.Movimiento.Mover.ReadValue<Vector2>();
         if (_direccion != Vector2.zero)
         {
             _ultimaDireccion = _direccion;
@@ -81,7 +81,7 @@ public class JugadorMovimiento : MonoBehaviour
     private void MoverJugador()
     {
         
-        _rb.MovePosition(_rb.position+_direccion * _velocidad*Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position+_direccion.normalized * _velocidad*Time.fixedDeltaTime);
         
     }
     private void AnimarMovimiento()
