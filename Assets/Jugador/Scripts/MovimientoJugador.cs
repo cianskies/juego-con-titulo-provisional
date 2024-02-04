@@ -24,7 +24,8 @@ public class JugadorMovimiento : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
 
-    private Vector2 _direccion;
+    [SerializeField]private Vector2 _direccion;
+    [SerializeField] private Vector2 _ultimaDireccion;
     private float _velocidad;
 
     private bool _inputActivado = true;
@@ -41,7 +42,7 @@ public class JugadorMovimiento : MonoBehaviour
     }
     void Start()
     {
-        _velocidadActual = _velocidadMax;
+        _velocidad = _velocidadMax;
         _controles.Sprint.Sprint.performed += ctx => Esprintar();
     }
     private void Update()
@@ -67,14 +68,20 @@ public class JugadorMovimiento : MonoBehaviour
     private void GetInput()
     {
         _direccion = _controles.Movimiento.Mover.ReadValue<Vector2>().normalized;
+        if (_direccion != Vector2.zero)
+        {
+            _ultimaDireccion = _direccion;
+        }
+
         _velocidadActual = Mathf.Clamp(_direccion.magnitude, 0.0f, 1.0f);
+        
 
 
     }
     private void MoverJugador()
     {
         
-        _rb.MovePosition(_rb.position+_direccion * _velocidadActual*Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position+_direccion * _velocidad*Time.fixedDeltaTime);
         
     }
     private void AnimarMovimiento()
@@ -107,10 +114,11 @@ public class JugadorMovimiento : MonoBehaviour
     }
     private IEnumerator IESprint()
     {
-        _velocidadActual = _velocidadSprint;
+        _velocidad = _velocidadSprint;
         _inputActivado = false;
+        
         yield return new WaitForSeconds(_duracionSprint);
-        _velocidadActual = _velocidadMax;
+        _velocidad = _velocidadMax;
         _inputActivado = true;
         
     }

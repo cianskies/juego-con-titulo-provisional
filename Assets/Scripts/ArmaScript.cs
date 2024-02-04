@@ -8,6 +8,7 @@ public class ArmaScript : MonoBehaviour
     [SerializeField] protected Transform _posicionDisparo;
     [SerializeField] protected Arma _arma;
 
+    public Arma Arma { get { return _arma; } set { _arma = value; } }
     private int _hitAnim = Animator.StringToHash("Hit");
     private Animator _animator;
 

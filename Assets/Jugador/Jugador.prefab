@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3936940a3df0447b0cb6eeddc68203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statsJugador: {fileID: 11400000, guid: 221d8bc89eb7bc34895ff8948289beb6, type: 2}
+  _statsJugador: {fileID: 11400000, guid: 09c9119a7eabbc449b0424bfd6064263, type: 2}
 --- !u!114 &3156087570532921711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,5 +254,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85094c59178cd4fac679ab06583de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arma1: {fileID: 2708512986326683522, guid: eeea22704c447764e80e188f93a47a06, type: 3}
+  _arma1: {fileID: 8064076573574279704, guid: eeea22704c447764e80e188f93a47a06, type: 3}
   _armaPosicionRotacion: {fileID: 8005174590270158224}

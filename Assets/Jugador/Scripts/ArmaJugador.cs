@@ -10,12 +10,18 @@ public class ArmaJugador : MonoBehaviour
 
     private JugadorMovimiento _movimientoJugador;
     private ControlesJugador _controlesJugador;
+    private ModificadorStatsJugador _mStatsJugador;
+
+    
    
     private ArmaScript _arma;
     private void Awake()
     {
         _controlesJugador=new ControlesJugador();
         _movimientoJugador=GetComponent<JugadorMovimiento>();
+        _mStatsJugador = GetComponent<ModificadorStatsJugador>();
+        
+        
 
     }
     private void Start()
@@ -29,6 +35,18 @@ public class ArmaJugador : MonoBehaviour
         if(_movimientoJugador.Direccion!=Vector2.zero)
         {
             RotarPosicionArma(_movimientoJugador.Direccion);
+        }
+    }
+    private bool SuficienteAmmo()
+    {
+        if (_mStatsJugador.CosteAmmoSuficiente(_arma.Arma.CosteAmmo))
+        {
+
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
     private void CrearArma(ArmaScript arma)
@@ -65,10 +83,12 @@ public class ArmaJugador : MonoBehaviour
     }
         private void HitArma()
         {
-            if (_arma != null)
+            if (SuficienteAmmo())
             {
                 Debug.Log("Pium");
                 _arma.UsarArma();
+                _mStatsJugador.GastarAmmo(1);
+
             }
         }
         private void OnEnable()

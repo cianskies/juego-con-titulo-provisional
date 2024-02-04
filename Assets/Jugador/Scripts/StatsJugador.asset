@@ -13,21 +13,22 @@ MonoBehaviour:
   m_Name: StatsJugador
   m_EditorClassIdentifier: 
   LVLBase: 1
-  SaludBase: 25
-  EscudoBase: 15
-  AtaqueBase: 10
-  MagiaBase: 25
-  DineroBase: 2
+  SaludBase: 35
+  EscudoBase: 5
+  AtaqueBase: 1
+  AmmoBase: 5
+  DineroBase: 0
   PorcentajeCritBase: 5
-  AtaqueCriticoBase: 25
+  AtaqueCriticoBase: 2
   SuerteBase: 1
   LVL: 1
-  Salud: 25
-  Escudo: 15
-  Ataque: 10
-  Magia: 0
+  Salud: 35
+  Escudo: 5
+  Ataque: 1
+  Ammo: 5
   Dinero: 0
   PorcentajeCrit: 5
-  AtaqueCritico: 25
+  AtaqueCritico: 2
   Suerte: 1
-  IconoJugador: {fileID: -101755200, guid: 5d18702c92b96094bade4865764b3b26, type: 3}
+  CosteAmmo: 0
+  IconoJugador: {fileID: 0}

@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 5090330326928576604}
   - component: {fileID: 324975083489695452}
   m_Layer: 5
-  m_Name: Magia
+  m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 340915000522050705}
   m_Layer: 5
-  m_Name: StatMagia
+  m_Name: StatAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,13 +633,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bdcbbd7434d974a935e87aef1ab7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statsJugador: {fileID: 11400000, guid: 221d8bc89eb7bc34895ff8948289beb6, type: 2}
+  _statsJugador: {fileID: 11400000, guid: 09c9119a7eabbc449b0424bfd6064263, type: 2}
   _barraSalud: {fileID: 6241489822471446042}
   _saludText: {fileID: 966981113047265035}
   _barraEscudo: {fileID: 1261276690406842517}
   _escudoText: {fileID: 3254098938239199186}
   _barraMagia: {fileID: 2408405441708918389}
-  _magiaText: {fileID: 324975083489695452}
+  _ammoText: {fileID: 324975083489695452}
 --- !u!1 &5019502491624691620
 GameObject:
   m_ObjectHideFlags: 0

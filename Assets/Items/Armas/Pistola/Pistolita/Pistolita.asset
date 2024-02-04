@@ -15,11 +15,12 @@ MonoBehaviour:
   ID: 0
   Icono: {fileID: 21300000, guid: 8b1d2ac1a57fea940b8cafa0ded82392, type: 3}
   Nombre: Pistolita
-  tipo: 2
-  rango: 0
+  Tipo: 0
+  Rango: 0
   Ataque: 10
   CosteMp: 0
   Delay: 0.2
   DispersionMin: -3
   DispersionMax: 3
   Ammo: 25
+  CosteAmmo: 1

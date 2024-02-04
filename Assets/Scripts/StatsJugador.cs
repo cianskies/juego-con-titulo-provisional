@@ -11,7 +11,7 @@ public class StatsJugador : ScriptableObject
     public float SaludBase;
     public float EscudoBase;
     public float AtaqueBase;
-    public float MagiaBase;
+    public float AmmoBase;
     public float DineroBase;
     public float PorcentajeCritBase;
     public float AtaqueCriticoBase;
@@ -24,12 +24,14 @@ public class StatsJugador : ScriptableObject
     public float Salud;
     public float Escudo;
     public float Ataque;
-    public float Magia;
+    public float Ammo;
     public float Dinero;
     public float PorcentajeCrit;
     public float AtaqueCritico;
     public float Suerte;
 
+    [Header("Arma")]
+    public float CosteAmmo;
 
     [Header("Visuals")]
     public Sprite IconoJugador;

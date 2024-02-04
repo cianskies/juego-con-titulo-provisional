@@ -1,11 +1,14 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
-public class SaludJugador : MonoBehaviour
+public class ModificadorStatsJugador : MonoBehaviour
 {
     [SerializeField] private StatsJugador _statsJugador;
+   
+
     public void Awake()
     {
         _statsJugador.Salud = _statsJugador.SaludBase;
@@ -15,8 +18,9 @@ public class SaludJugador : MonoBehaviour
         _statsJugador.PorcentajeCrit = _statsJugador.PorcentajeCritBase;
         _statsJugador.Suerte = _statsJugador.SuerteBase;
         _statsJugador.AtaqueCritico = _statsJugador.AtaqueCriticoBase;
-        _statsJugador.Magia = _statsJugador.MagiaBase;
+        _statsJugador.Ammo = _statsJugador.AmmoBase;
         _statsJugador.Dinero = _statsJugador.DineroBase;
+        
     }
     public void Curar(float hp)
     {
@@ -34,12 +38,12 @@ public class SaludJugador : MonoBehaviour
             _statsJugador.Escudo = _statsJugador.EscudoBase;
         }
     }
-    public void CurarMagia(float mp)
+    public void GetAmmo(float ammo)
     {
-        _statsJugador.Magia += mp;
-        if (_statsJugador.Magia > _statsJugador.MagiaBase)
+        _statsJugador.Ammo += ammo;
+        if (_statsJugador.Ammo > _statsJugador.AmmoBase)
         {
-            _statsJugador.Magia = _statsJugador.MagiaBase;
+            _statsJugador.Ammo = _statsJugador.AmmoBase;
         }
     }
     public void SubirAtaque(float atk)
@@ -84,18 +88,22 @@ public class SaludJugador : MonoBehaviour
         }
 
     }
-    public void GastarMagia(float mp)
+    public void GastarAmmo(float ammo)
     {
-        if (_statsJugador.Magia > 0)
+        _statsJugador.Ammo -= ammo;
+
+
+        
+
+    }
+    public bool CosteAmmoSuficiente(float costeAmmo)
+    {
+        if (_statsJugador.Ammo >= costeAmmo)
         {
-            _statsJugador.Magia -= mp;
-            if (_statsJugador.Magia < 0)
-            {
-                _statsJugador.Magia = 0;
-            }
-
+            return true;
         }
-
+        else { return false; }
+        
     }
     public void GastarDinero(float euro)
     {

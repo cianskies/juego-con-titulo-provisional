@@ -27,8 +27,8 @@ public enum Rango
 public class Arma : ItemData
 {
 
-    public Tipo tipo;
-    public Rango rango;
+    public Tipo Tipo;
+    public Rango Rango;
 
     public float Ataque;
     public float CosteMp;
@@ -37,7 +37,7 @@ public class Arma : ItemData
     public float DispersionMin;
     public float DispersionMax;
     public float Ammo;
-    
+    public float CosteAmmo;
 
 
     //efectos
