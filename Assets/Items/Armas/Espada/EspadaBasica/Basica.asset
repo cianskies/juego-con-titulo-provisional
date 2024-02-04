@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 005b18c75f7bd0745bb533d5e5e29d80, type: 3}
-  m_Name: Pui
+  m_Name: Basica
   m_EditorClassIdentifier: 
-  ID: 0
-  Icono: {fileID: 0}
-  Nombre: 
-  tipo: 0
-  rango: 0
-  Ataque: 0
+  ID: 1
+  Icono: {fileID: -827116543, guid: 5f86def8c3aae7247a79e0dd5fafbf9a, type: 3}
+  Nombre: Pistolita
+  Tipo: 0
+  Rango: 0
+  Ataque: 5
   CosteMp: 0
-  Delay: 0
+  Delay: 2
   DispersionMin: 0
   DispersionMax: 0
   Ammo: 0
+  CosteAmmo: 0

@@ -53,6 +53,8 @@ public class ArmaJugador : MonoBehaviour
     {
         _arma = Instantiate(arma,
             _armaPosicionRotacion.position, Quaternion.identity, _armaPosicionRotacion);
+        _mStatsJugador.GetAmmo(_arma.Arma.Ammo);
+        _mStatsJugador.SetAmmoMax(_arma.Arma.Ammo);
     }
 
     private void RotarPosicionArma(Vector3 direccion)
@@ -87,7 +89,7 @@ public class ArmaJugador : MonoBehaviour
             {
                 Debug.Log("Pium");
                 _arma.UsarArma();
-                _mStatsJugador.GastarAmmo(1);
+                _mStatsJugador.GastarAmmo(_arma.Arma.CosteAmmo);
 
             }
         }

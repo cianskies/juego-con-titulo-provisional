@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EspadaBasica
+  m_Controller: {fileID: 9100000, guid: 7c91696cae063df49a38b6de97e4d264, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d853e83eaae6d2b409863f4e040efb83, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fa9e148b050aeae42a0cea757fd1c6e9, type: 2}

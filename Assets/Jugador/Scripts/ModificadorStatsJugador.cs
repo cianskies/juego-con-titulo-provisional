@@ -18,7 +18,6 @@ public class ModificadorStatsJugador : MonoBehaviour
         _statsJugador.PorcentajeCrit = _statsJugador.PorcentajeCritBase;
         _statsJugador.Suerte = _statsJugador.SuerteBase;
         _statsJugador.AtaqueCritico = _statsJugador.AtaqueCriticoBase;
-        _statsJugador.Ammo = _statsJugador.AmmoBase;
         _statsJugador.Dinero = _statsJugador.DineroBase;
         
     }
@@ -40,11 +39,11 @@ public class ModificadorStatsJugador : MonoBehaviour
     }
     public void GetAmmo(float ammo)
     {
-        _statsJugador.Ammo += ammo;
-        if (_statsJugador.Ammo > _statsJugador.AmmoBase)
-        {
-            _statsJugador.Ammo = _statsJugador.AmmoBase;
-        }
+        _statsJugador.Ammo = ammo;
+    }
+    public void SetAmmoMax(float ammo)
+    {
+        _statsJugador.AmmoBase = ammo;
     }
     public void SubirAtaque(float atk)
     {

@@ -16,7 +16,7 @@ MonoBehaviour:
   SaludBase: 35
   EscudoBase: 5
   AtaqueBase: 1
-  AmmoBase: 5
+  AmmoBase: 25
   DineroBase: 0
   PorcentajeCritBase: 5
   AtaqueCriticoBase: 2
@@ -25,7 +25,7 @@ MonoBehaviour:
   Salud: 35
   Escudo: 5
   Ataque: 1
-  Ammo: 5
+  Ammo: 6
   Dinero: 0
   PorcentajeCrit: 5
   AtaqueCritico: 2
