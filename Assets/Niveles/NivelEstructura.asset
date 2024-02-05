@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b42f314623e324d997c4bbe7102ff3, type: 3}
+  m_Name: NivelEstructura
+  m_EditorClassIdentifier: 
+  Arena: {fileID: 0}
+  SalaTesoro: {fileID: 0}
+  Tienda: {fileID: 0}
+  Salida: {fileID: 0}
+  Niveles:
+  - Nombre: Nivel1
+    Habitaciones:
+    - {fileID: 8383301167081655231, guid: 26967301ae06636469cb2a7d46551ebd, type: 3}
+    - {fileID: 8383301167081655231, guid: b7f798d5f5444854f8d043de2064be1e, type: 3}
+    - {fileID: 8383301167081655231, guid: e3ed19e9b63ff114eb37c1809a7e2dd6, type: 3}
+    - {fileID: 8383301167081655231, guid: 81920323d9d22dd44a152d779c73fc58, type: 3}
+    - {fileID: 8383301167081655231, guid: b346ad4f97bdbba4f98ede7451a861b2, type: 3}
+  - Nombre: Nivel2
+    Habitaciones:
+    - {fileID: 8383301167081655231, guid: 6617a56a161c8dd419fcfc0c072dca7e, type: 3}
+    - {fileID: 8383301167081655231, guid: aca2d11252e11514487b5c8aa33a959e, type: 3}
+    - {fileID: 8383301167081655231, guid: ada9c77b39ec2f74cae1758cfa4d7cdf, type: 3}
+    - {fileID: 8383301167081655231, guid: 08b8344304bc0864c95abb075a5b186a, type: 3}
+    - {fileID: 8383301167081655231, guid: 318f89936efe6d54f8c80acbf152eb09, type: 3}
+  - Nombre: 
+    Habitaciones: []
