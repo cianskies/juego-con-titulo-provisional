@@ -371,7 +371,7 @@ PrefabInstance:
     - target: {fileID: 3156087570532921711, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
       propertyPath: _arma1
       value: 
-      objectReference: {fileID: 1151217823079149288, guid: 60b85fc6fe41dd74dba33f2e1f4dbc93, type: 3}
+      objectReference: {fileID: 8064076573574279704, guid: eeea22704c447764e80e188f93a47a06, type: 3}
     - target: {fileID: 3380290520188894690, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4621215
