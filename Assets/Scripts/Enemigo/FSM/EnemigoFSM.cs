@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class EnemigoFSM : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Configuracion")]
+    [SerializeField] private string _IDEstadoInicial;
+
+    [Header("Estados")]
+    public EstadoFSM[] Estados;
+
+    public EstadoFSM EstadoActual {  get; private set; }
+
+    private void Start()
     {
-        
+        CambiarEstado(_IDEstadoInicial);
+    }
+    private void Update()
+    {
+        if (EstadoActual != null)
+        {
+            EstadoActual.EjecutarEstadoFSM(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CambiarEstado(string IDEstado)
     {
-        
+
     }
 }

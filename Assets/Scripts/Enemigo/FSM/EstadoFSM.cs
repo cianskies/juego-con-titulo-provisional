@@ -1,18 +1,54 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class EstadoFSM : MonoBehaviour
+[Serializable]
+public class EstadoFSM
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string IDEstado;
 
-    // Update is called once per frame
-    void Update()
+    public List<AccionFSM> Acciones;
+    public List<TransicionFSM> Transiciones;
+
+    public void EjecutarEstadoFSM(EnemigoFSM enemigo)
     {
-        
+        EjecutarAccionesFSM();
+        EjecutarTransicionesFSM(enemigo);
+    }
+    private void EjecutarAccionesFSM()
+    {
+        if (Acciones.Count > 0)
+        {
+            for (int i = 0; i < Acciones.Count; i++)
+            {
+                Acciones[i].EjecutarAccionFSM();
+            }
+        }
+    }
+    private void EjecutarTransicionesFSM(EnemigoFSM enemigo)
+    {
+        if (Transiciones.Count > 0)
+        {
+            for (int i = 0; i < Transiciones.Count; i++)
+            {
+                bool decisionFSM = Transiciones[i].Decision.Decidir(enemigo);
+                if (decisionFSM)
+                {
+                    if (string.IsNullOrEmpty(Transiciones[i].EstadoTrue) == false)
+                    {
+                        enemigo.CambiarEstado(Transiciones[i].EstadoTrue);
+                        break;
+                    }
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(Transiciones[i].EstadoFalse) == false)
+                    {
+                        enemigo.CambiarEstado(Transiciones[i].EstadoFalse);
+                        break;
+
+                    }
+                }
+            }
+        }
     }
 }

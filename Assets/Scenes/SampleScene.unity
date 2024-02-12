@@ -391,6 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _IDEstadoInicial: 
+  Estados: []
 --- !u!1001 &917384848237038489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,8 +450,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7905106972324682947, guid: a27b0ef2a8fd53b4da34472357f385af, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 917384848237038491}
+    - targetCorrespondingSourceObject: {fileID: 7905106972324682947, guid: a27b0ef2a8fd53b4da34472357f385af, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 917384848237038498}
   m_SourcePrefab: {fileID: 100100000, guid: a27b0ef2a8fd53b4da34472357f385af, type: 3}
 --- !u!1 &917384848237038490 stripped
 GameObject:
@@ -468,6 +473,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _IDEstadoInicial: Movimiento
+  Estados:
+  - IDEstado: Movimiento
+    Acciones:
+    - {fileID: 917384848237038498}
+    Transiciones: []
+--- !u!114 &917384848237038498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917384848237038490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8bd4d9643bd0c43b9c89cd86dfc72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DebugActivado: 1
+  _usarMovimientoAleatorio: 1
+  _velocidadMovimiento: 1.5
+  _distanciaMinima: 0.5
+  _rangoMovimiento: {x: 2, y: 2}
+  _obstaculoMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _radioDeteccionObstaculos: 0.5
 --- !u!1001 &1427365100426939123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,6 +730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _IDEstadoInicial: 
+  Estados: []
 --- !u!1001 &4879827223632662770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,6 +809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _IDEstadoInicial: 
+  Estados: []
 --- !u!1001 &5943711527304098517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,6 +888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _IDEstadoInicial: 
+  Estados: []
 --- !u!1001 &6028230183651993906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -929,6 +967,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _IDEstadoInicial: 
+  Estados: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

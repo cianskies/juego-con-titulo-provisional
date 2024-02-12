@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class TransicionFSM : MonoBehaviour
+[Serializable]
+public class TransicionFSM 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public DecisionFSM Decision;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public String EstadoTrue;
+    public String EstadoFalse;
+
+
 }
