@@ -7,11 +7,7 @@ using UnityEngine;
 public class NivelEstructura : ScriptableObject
 {
 
-    [Header("Estructura")]
-    [SerializeField] public GameObject Arena;
-    [SerializeField] public GameObject SalaTesoro;
-    [SerializeField] public GameObject Tienda;
-    [SerializeField] public GameObject Salida;
+   
 
     [Header("Niveles")]
     [SerializeField]public Nivel[] Niveles;
@@ -20,5 +16,5 @@ public class NivelEstructura : ScriptableObject
 public class Nivel
 {
     public string Nombre;
-    public GameObject[] Habitaciones;
+    public GameObject[] Pisos;
 }
