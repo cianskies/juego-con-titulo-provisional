@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - Suelo
   - Pared
-  - 
+  - Obstaculo
   - 
   - 
   - 
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Props
     uniqueID: 206369201
+    locked: 0
+  - name: Enemigo
+    uniqueID: 1614513913
     locked: 0
   - name: Jugador
     uniqueID: 2233631731
