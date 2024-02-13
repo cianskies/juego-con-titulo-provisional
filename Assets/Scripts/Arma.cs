@@ -41,5 +41,10 @@ public class Arma : ItemData
 
 
     //efectos
-    
+
+
+    public override void Recoger()
+    {
+        Debug.Log("recoger");
+    }
 }

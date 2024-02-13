@@ -11,4 +11,8 @@ public class ItemData : ScriptableObject
     public Sprite Icono;
     public string Nombre;
 
+    public virtual void Recoger()
+    {
+
+    }
 }

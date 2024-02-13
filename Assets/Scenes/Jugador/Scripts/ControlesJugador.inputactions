@@ -128,6 +128,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Acciones",
+            "id": "935b4945-85a4-4fc3-8770-92490db3eee7",
+            "actions": [
+                {
+                    "name": "Recoger",
+                    "type": "Button",
+                    "id": "75fd2945-27be-464f-b7cf-e7b4db1d6692",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "47e076e0-494d-4733-b428-4f0d12f044d0",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recoger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
