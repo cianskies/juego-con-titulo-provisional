@@ -40,11 +40,12 @@ public class Arma : ItemData
     public float CosteAmmo;
 
 
-    //efectos
+    public ArmaScript ArmaPrefab;
 
 
     public override void Recoger()
     {
         Debug.Log("recoger");
+        NivelManager.Instancia.Jugador.GetComponent<ArmaJugador>().EquiparArma(ArmaPrefab);
     }
 }

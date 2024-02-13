@@ -24,3 +24,4 @@ MonoBehaviour:
   DispersionMax: 3
   Ammo: 25
   CosteAmmo: 1
+  ArmaPrefab: {fileID: 8064076573574279704, guid: eeea22704c447764e80e188f93a47a06, type: 3}

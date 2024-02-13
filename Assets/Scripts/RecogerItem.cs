@@ -23,6 +23,7 @@ public class RecogerItem : MonoBehaviour
         if(_itemAlAlcance)
         {
             _item.Recoger();
+            Destroy(gameObject);
         }
     }
 

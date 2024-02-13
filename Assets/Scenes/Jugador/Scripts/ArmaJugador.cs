@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ArmaJugador : MonoBehaviour
 {
-    [Header("Debug")]
-    [SerializeField] private ArmaScript _arma1;
+    [Header("RotacionArma")]
     [SerializeField] private Transform _armaPosicionRotacion;
 
     private JugadorMovimiento _movimientoJugador;
     private ControlesJugador _controlesJugador;
     private ModificadorStatsJugador _mStatsJugador;
 
-    
-   
+
     private ArmaScript _arma;
+    private int _armaIndex;
+    private ArmaScript[] _armasEquipadas=new ArmaScript[2];
     private void Awake()
     {
         _controlesJugador=new ControlesJugador();
@@ -26,13 +26,13 @@ public class ArmaJugador : MonoBehaviour
     }
     private void Start()
     {
-        CrearArma(_arma1);
+        
         _controlesJugador.Hit.Hit.performed+= ctx => HitArma();
     }
     private void Update()
     {
-        
-        if(_movimientoJugador.Direccion!=Vector2.zero)
+
+        if(_arma!=null&&_movimientoJugador.Direccion!=Vector2.zero)
         {
             RotarPosicionArma(_movimientoJugador.Direccion);
         }
@@ -55,8 +55,29 @@ public class ArmaJugador : MonoBehaviour
             _armaPosicionRotacion.position, Quaternion.identity, _armaPosicionRotacion);
         _mStatsJugador.GetAmmo(_arma.Arma.Ammo);
         _mStatsJugador.SetAmmoMax(_arma.Arma.Ammo);
+        _armasEquipadas[_armaIndex] = _arma;
     }
-
+    public void EquiparArma(ArmaScript arma)
+    {
+        if (_armasEquipadas[0] == null)
+        {
+            CrearArma(arma);
+            return;
+        }
+        if (_armasEquipadas[1] == null)
+        {
+            ++_armaIndex;
+            _armasEquipadas[0].gameObject.SetActive(false);
+            CrearArma(arma);
+            return;
+        }
+        //Destruimos el arma en el indice e arma actual 
+        Destroy(_arma.gameObject);
+        _armasEquipadas[_armaIndex] = null;
+        //La reemplazamos por el arma a equipar en la posicion del indice del arma que acabamos de 
+        //destruir
+        CrearArma(arma) ;
+    }
     private void RotarPosicionArma(Vector3 direccion)
     {
         //no me funcionaba esta puta funcion y he estado 3 horas probando mierda, me considero a partir

@@ -7,15 +7,20 @@ public class NivelManager : MonoBehaviour
 
     [SerializeField] private NivelEstructura _estructura;
 
+    [SerializeField] private Transform _jugador;
+
 
     private GameObject _nivel;
     private int _indiceNivel = 0;
     private int _indicePiso = 0;
 
-    private NivelManager _instancia;
+
+
+    public static NivelManager Instancia;
+    public Transform Jugador=> _jugador;
     private void Awake()
     {
-        _instancia = this;
+        Instancia = this;
 
     }
     private void Start()

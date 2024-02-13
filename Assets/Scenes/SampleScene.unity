@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _estructura: {fileID: 11400000, guid: 8fe3e9d437613304cb6013142d275570, type: 2}
+  _jugador: {fileID: 682737815}
 --- !u!4 &89891934
 Transform:
   m_ObjectHideFlags: 0
@@ -239,6 +240,11 @@ Transform:
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8534714556171473181, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
+  m_PrefabInstance: {fileID: 1849615138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &682737815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3380290520188894690, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
   m_PrefabInstance: {fileID: 1849615138}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1849615138
