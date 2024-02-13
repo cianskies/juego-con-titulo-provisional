@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848810885493837180}
+  - component: {fileID: 2395568106393465338}
+  - component: {fileID: 8356169937693797113}
   - component: {fileID: 6707699095568826860}
   - component: {fileID: 6017366707668020098}
   - component: {fileID: 5506195013733572337}
@@ -36,6 +38,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2395568106393465338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905106972324682947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8bd4d9643bd0c43b9c89cd86dfc72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DebugActivado: 1
+  _usarMovimientoAleatorio: 1
+  _velocidadMovimiento: 3
+  _distanciaMinima: 0.5
+  _rangoMovimiento: {x: 3, y: 3}
+  _obstaculoMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _radioDeteccionObstaculos: 0.5
+--- !u!114 &8356169937693797113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905106972324682947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _IDEstadoInicial: Movimiento
+  Estados:
+  - IDEstado: Movimiento
+    Acciones:
+    - {fileID: 2395568106393465338}
+    Transiciones: []
 --- !u!212 &6707699095568826860
 SpriteRenderer:
   m_ObjectHideFlags: 0

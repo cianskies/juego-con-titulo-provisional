@@ -11,7 +11,7 @@ public class Piso : MonoBehaviour
  
 
 
-    [SerializeField] private PisoEstructura _estructura;
+    [SerializeField] private PisoContenido _estructura;
     [SerializeField] private Puerta _puerta1;
     
 

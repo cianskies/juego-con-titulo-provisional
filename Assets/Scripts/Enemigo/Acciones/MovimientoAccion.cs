@@ -23,6 +23,10 @@ public class NavegarAccion : AccionFSM
     {
         _direccionMovimiento=(_posicionMovimiento-transform.position).normalized;
         transform.Translate(_direccionMovimiento*(_velocidadMovimiento*Time.deltaTime));
+        if (PuedeGenerarNuevaDireccion())
+        {
+            GenerarNuevaDireccion();
+        }
     }
 
     void Start()
@@ -49,7 +53,29 @@ public class NavegarAccion : AccionFSM
         float y = Random.Range(-_rangoMovimiento.y, _rangoMovimiento.y);
         return new Vector3(x, y);
     }
-
+    private bool PuedeGenerarNuevaDireccion()
+    {
+        bool puedeGenerarNuevaDireccion = false;
+        if (Vector3.Distance(transform.position, _posicionMovimiento) < _distanciaMinima)
+        {
+            puedeGenerarNuevaDireccion= true;
+        }
+        Collider2D[] resultados=new Collider2D[10];
+        int colisiones = Physics2D.OverlapCircleNonAlloc(transform.position, _radioDeteccionObstaculos, resultados, _obstaculoMask);
+        if (colisiones > 0)
+        {
+            for (int i = 0; i < colisiones; i++)
+            {
+                if (resultados[i] != null)
+                {
+                    Vector3 direccionOpuesta = -_direccionMovimiento;
+                    transform.position += direccionOpuesta * 0.1f;
+                    puedeGenerarNuevaDireccion = true;
+                }
+            }
+        }
+        return puedeGenerarNuevaDireccion;
+    }   
     private void OnDrawGizmos()
     {
         if (_DebugActivado)

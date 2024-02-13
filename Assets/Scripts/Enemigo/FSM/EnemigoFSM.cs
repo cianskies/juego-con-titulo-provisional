@@ -26,6 +26,21 @@ public class EnemigoFSM : MonoBehaviour
 
     public void CambiarEstado(string IDEstado)
     {
-
+        if(EstadoActual == null)
+        {
+            EstadoActual = BuscarEstado(IDEstado);
+        }
+        if(EstadoActual.IDEstado!= IDEstado)
+        {
+            EstadoActual=BuscarEstado(IDEstado);
+        }
+    }
+    public EstadoFSM BuscarEstado(string IDEstado)
+    {
+        for (int i = 0; i < Estados.Length; i++)
+        {
+            return Estados[i];
+        }
+        return null;
     }
 }
