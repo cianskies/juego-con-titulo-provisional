@@ -28,6 +28,7 @@ public class ArmaJugador : MonoBehaviour
     {
         
         _controlesJugador.Hit.Hit.performed+= ctx => HitArma();
+        _controlesJugador.Acciones.CambiarArma.performed += ctx => CambiarArma();
     }
     private void Update()
     {
@@ -39,7 +40,7 @@ public class ArmaJugador : MonoBehaviour
     }
     private bool SuficienteAmmo()
     {
-        if (_mStatsJugador.CosteAmmoSuficiente(_arma.Arma.CosteAmmo))
+        if (_arma!=null&&_mStatsJugador.CosteAmmoSuficiente(_arma.Arma.CosteAmmo))
         {
 
             return true;
@@ -53,8 +54,13 @@ public class ArmaJugador : MonoBehaviour
     {
         _arma = Instantiate(arma,
             _armaPosicionRotacion.position, Quaternion.identity, _armaPosicionRotacion);
-        _mStatsJugador.GetAmmo(_arma.Arma.Ammo);
-        _mStatsJugador.SetAmmoMax(_arma.Arma.Ammo);
+
+        if(_arma.Arma.CosteAmmo>0)
+        {
+            _mStatsJugador.GetAmmo(_arma.Arma.Ammo);
+            _mStatsJugador.SetAmmoMax(_arma.Arma.Ammo);
+        }
+        
         _armasEquipadas[_armaIndex] = _arma;
     }
     public void EquiparArma(ArmaScript arma)
@@ -78,28 +84,48 @@ public class ArmaJugador : MonoBehaviour
         //destruir
         CrearArma(arma) ;
     }
+    private void CambiarArma()
+    {
+        if (_armasEquipadas[1]!=null)
+        {
+            for(int i = 0;i<_armasEquipadas.Length;++i)
+            {
+                _armasEquipadas[i].gameObject.SetActive(false);
+
+            }
+            //cambiar Indice Arma (0-1)
+            _armaIndex = 1 - _armaIndex;
+            _arma = _armasEquipadas[_armaIndex];
+            _arma.gameObject.SetActive(true);
+            ReinciarPosicionArma();
+        }
+    }
     private void RotarPosicionArma(Vector3 direccion)
     {
         //no me funcionaba esta puta funcion y he estado 3 horas probando mierda, me considero a partir
         //de hoy maestro de los jodidos vectores, si lees esto, que sepas que probablemente no este vivo
-        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-
-
- 
-        if (direccion.x > 0f)
+        if (_arma != null)
         {
-            _armaPosicionRotacion.localScale = Vector3.one;
-            _arma.transform.localScale = Vector3.one;
+            float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+
+
+            if (direccion.x > 0f)
+            {
+                _armaPosicionRotacion.localScale = Vector3.one;
+                _arma.transform.localScale = Vector3.one;
+            }
+            else if (direccion.x < 0f)
+            {
+                _armaPosicionRotacion.localScale = new Vector3(-1, 1, 1);
+                _arma.transform.localScale = new Vector3(-1, -1, 1);
+            }
+
+
+
+            _arma.transform.eulerAngles = new Vector3(0f, 0f, angulo);
+
         }
-        else if (direccion.x < 0f)
-        {
-            _armaPosicionRotacion.localScale = new Vector3(-1, 1, 1);
-            _arma.transform.localScale = new Vector3(-1, -1, 1);
-        }
-
-
-
-        _arma.transform.eulerAngles = new Vector3(0f, 0f,angulo);
 
 
 
@@ -114,7 +140,18 @@ public class ArmaJugador : MonoBehaviour
 
             }
         }
-        private void OnEnable()
+    private void ReinciarPosicionArma()
+    {
+        Transform posicion = _arma.transform;
+        posicion.rotation=Quaternion.identity;
+        posicion.localScale = Vector3.one;
+        
+        _armaPosicionRotacion.rotation = Quaternion.identity;
+        _armaPosicionRotacion.localScale = Vector3.one;
+        
+
+    }
+     private void OnEnable()
     {
         _controlesJugador.Enable();
     }

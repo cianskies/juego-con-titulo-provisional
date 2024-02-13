@@ -86,7 +86,15 @@ public class JugadorMovimiento : MonoBehaviour
     }
     private void AnimarMovimiento()
     {
-        if (_direccion != Vector2.zero){
+        GirarPersonaje();
+        _animator.SetFloat("Velocidad", _velocidadActual);
+
+    }
+
+    public void GirarPersonaje()
+    {
+        if (_direccion != Vector2.zero)
+        {
             _animator.SetFloat("DireccionX", _direccion.x);
             _animator.SetFloat("DireccionY", _direccion.y);
 
@@ -100,8 +108,20 @@ public class JugadorMovimiento : MonoBehaviour
             }
 
         }
-        _animator.SetFloat("Velocidad", _velocidadActual);
+    }
+    public void GirarPersonajeSoloDerecha()
+    {
+        _animator.SetFloat("DireccionX", _direccion.x);
+        _animator.SetFloat("DireccionY", _direccion.y);
 
+        if (_direccion.x >= 0.1f)
+        {
+            _spriteRenderer.flipX = false;
+        }
+        else if (_direccion.x < 0f)
+        {
+            _spriteRenderer.flipX = true;
+        }
     }
     private void Esprintar()
     {

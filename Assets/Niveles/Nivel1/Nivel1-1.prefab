@@ -3168,7 +3168,6 @@ Transform:
   - {fileID: 1322357376061023661}
   - {fileID: 2390838963820166152}
   - {fileID: 2862753090505278076}
-  - {fileID: 1229511381178644772}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1430643423567774713
@@ -5663,88 +5662,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7764297335835502385, guid: 7c2024a642b6fae4397fd21409b54538, type: 3}
   m_PrefabInstance: {fileID: 4410018895563900458}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6438348026059513839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6143718423499038943}
-    m_Modifications:
-    - target: {fileID: 82109170456697839, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: _ItemEspecifico
-      value: 
-      objectReference: {fileID: 3391228260638948224, guid: a371ba437dfe19446b79caba02c28794, type: 3}
-    - target: {fileID: 503929967017003914, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_Name
-      value: Cofre (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 503929967017003914, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722249202996032617, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722249202996032617, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -139977385
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771006353364115916, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
---- !u!4 &1229511381178644772 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
-  m_PrefabInstance: {fileID: 6438348026059513839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6532631254070875849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5912,7 +5829,7 @@ PrefabInstance:
     - target: {fileID: 82109170456697839, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
       propertyPath: _ItemEspecifico
       value: 
-      objectReference: {fileID: 3391228260638948224, guid: a371ba437dfe19446b79caba02c28794, type: 3}
+      objectReference: {fileID: 3391228260638948224, guid: 91e860bee95e17a43bd05864034e43a2, type: 3}
     - target: {fileID: 503929967017003914, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
       propertyPath: m_Name
       value: Cofre (1)
@@ -5923,7 +5840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5208836816759596747, guid: ac34db4c1a8944c48877b97bf8e0674f, type: 3}
       propertyPath: m_LocalPosition.y
