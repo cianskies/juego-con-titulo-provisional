@@ -53,6 +53,7 @@ public class ArmaJugador : MonoBehaviour
     }
     private void CrearArma(ArmaScript arma)
     {
+        //instancia el arma seleccionada y ajusta su rotacion
         _arma = Instantiate(arma,
             _armaPosicionRotacion.position, Quaternion.identity, _armaPosicionRotacion);
 
@@ -147,22 +148,6 @@ public class ArmaJugador : MonoBehaviour
 
             }
         }
-    private void ReinciarPosicionArma()
-    {
-        
-        Vector2 direccion = _movimientoJugador.Direccion;
-        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-        Transform posicion = _arma.transform;
-        posicion.rotation=Quaternion.Euler(0f,0f,angulo);
-        posicion.localScale = Vector3.one;
-        
-        _armaPosicionRotacion.rotation = Quaternion.Euler(0f, 0f, angulo);
-        _armaPosicionRotacion.localScale = Vector3.one;
-        _movimientoJugador.ReiniciarPosicionPersonaje();
-
-
-
-    }
      private void OnEnable()
     {
         _controlesJugador.Enable();
