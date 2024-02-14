@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1244719418802650170}
   - component: {fileID: 8316012137257158861}
   - component: {fileID: 4487719835156910806}
-  m_Layer: 0
-  m_Name: gratis-png-boton-de-tela-roja-ropa-de-boton-rojo-thumbnail
+  m_Layer: 12
+  m_Name: Boton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -139977385
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9d21372b1cb6644191b8f2b92734c2b, type: 3}
+  m_Sprite: {fileID: 1947284679, guid: 9613dc84892d4914c8493449ce59d889, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5285714, y: 0.5057143}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 3.7, y: 3.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class Piso : MonoBehaviour
 {
@@ -17,11 +20,14 @@ public class Piso : MonoBehaviour
     [SerializeField] private PisoContenido _estructura;
     [SerializeField] private Puerta _puerta1;
     
-    private Dictionary<Vector3, bool> _listaTiles= new Dictionary<Vector3, bool>(); 
+    private Dictionary<Vector3, bool> _listaTiles= new Dictionary<Vector3, bool>();
+
+    public static Piso Instancia;
 
 
     private void Awake()
     {
+        Instancia = this;
         _estructura.RondaActual = 0;
         _estructura.TemporizadorActivo = false;
         _estructura.BotonEstaPulsado = false;
@@ -38,10 +44,11 @@ public class Piso : MonoBehaviour
         {
             Vector3Int posicionTile = new Vector3Int(tile.x, tile.y, tile.z);
             Vector3 posicion=_tileMapExtra.CellToWorld(posicionTile);
+            Vector3 posicionReal=new Vector3(posicion.x+0.5f,posicion.y+0.5f,posicion.z);
             if (_tileMapExtra.HasTile(posicionTile))
             {
                 //Debug.Log("Se añade un tile");
-                _listaTiles.Add(posicion, true);
+                _listaTiles.Add(posicionReal, true);
             }
             
         }
@@ -68,6 +75,7 @@ public class Piso : MonoBehaviour
         {
             ++_estructura.RondaActual;
             //Debug.Log("Comienza la ronda " + _estructura.RondaActual);
+            InstanciarEnemigosDeRonda();
             StartCoroutine(IETemporizador());
         }
         else
@@ -85,6 +93,37 @@ public class Piso : MonoBehaviour
         {
             SiguienteRonda();
         }
+    }
+
+    private void InstanciarEnemigosDeRonda()
+    {
+        int numeroEnemigos=GenerarNumeroEnemigosRonda();
+        for (int i = 0; i < numeroEnemigos; ++i)
+        {
+
+            EnemigoFSM enemigo=Instantiate(ObtenerFSMEnemigoRandom(), ObtenerTileDisponible(), Quaternion.identity,transform);
+            enemigo.PisoActual = Instancia;
+        }
+    }
+
+
+
+    public Vector3 ObtenerTileDisponible() {
+        List<Vector3> tilesLibres=(from tile in _listaTiles where tile.Value select tile.Key).ToList();
+        int random = Random.Range(0,tilesLibres.Count);
+        return tilesLibres[random];
+
+    }
+    private int GenerarNumeroEnemigosRonda()
+    {
+        int cantidad= Random.Range(_estructura.MinEnemigosRonda,_estructura.MaxEnemigosRonda+1);
+        return cantidad;
+    }
+    private EnemigoFSM ObtenerFSMEnemigoRandom()
+    {
+        EnemigoFSM[] enemigosDePiso = _estructura.EnemigosDePiso;
+        int random = Random.Range(0, enemigosDePiso.Length);
+        return enemigosDePiso[random];
     }
     private int getNumeroRondasRestantes()
     {

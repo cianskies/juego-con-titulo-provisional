@@ -295,25 +295,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6465815740279191789, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6922709847740295850, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
-    - target: {fileID: 8534714556171473181, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.6572624
-      objectReference: {fileID: 0}
-    - target: {fileID: 8534714556171473181, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.6572624
-      objectReference: {fileID: 0}
-    - target: {fileID: 8534714556171473181, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.6603774
+    - target: {fileID: 8108939888642500848, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
+      propertyPath: MostrarDebug
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

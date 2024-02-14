@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6989d3044bb73e24a9346c6153c89318, type: 3}
   m_Name: PiscoContenido1-1
   m_EditorClassIdentifier: 
-  NumeroRondas: 3
-  RondaActual: 0
-  SegundosPorRonda: 3
+  NumeroRondas: 5
+  RondaActual: 5
+  SegundosPorRonda: 5
   NivelSuperado: 0
-  TemporizadorActivo: 0
-  BotonEstaPulsado: 0
+  TemporizadorActivo: 1
+  BotonEstaPulsado: 1
+  EnemigosDePiso:
+  - {fileID: 8356169937693797113, guid: a27b0ef2a8fd53b4da34472357f385af, type: 3}
+  MinEnemigosRonda: 2
+  MaxEnemigosRonda: 4

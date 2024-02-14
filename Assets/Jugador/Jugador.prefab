@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 58102236881389104}
   - component: {fileID: 3473705650751072469}
   - component: {fileID: 8108939888642500848}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CampoVision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingLayerID: -2061335565
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -101755200, guid: 5d18702c92b96094bade4865764b3b26, type: 3}
+  m_Sprite: {fileID: -1571109400, guid: 1e95538edc87d0c49a5295d814abdd55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -306,7 +306,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -340,7 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c85094c59178cd4fac679ab06583de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arma1: {fileID: 8064076573574279704, guid: eeea22704c447764e80e188f93a47a06, type: 3}
   _armaPosicionRotacion: {fileID: 8005174590270158224}
 --- !u!1001 &6386356575556453067
 PrefabInstance:
@@ -352,15 +351,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3373619242102494166, guid: f44f1c4b9fed67546b5352828e54a062, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 1
+      value: 0.6572624
       objectReference: {fileID: 0}
     - target: {fileID: 3373619242102494166, guid: f44f1c4b9fed67546b5352828e54a062, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 1
+      value: 0.6572624
       objectReference: {fileID: 0}
     - target: {fileID: 3373619242102494166, guid: f44f1c4b9fed67546b5352828e54a062, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 1
+      value: 0.6603774
       objectReference: {fileID: 0}
     - target: {fileID: 5818503294996780272, guid: f44f1c4b9fed67546b5352828e54a062, type: 3}
       propertyPath: m_LocalPosition.x

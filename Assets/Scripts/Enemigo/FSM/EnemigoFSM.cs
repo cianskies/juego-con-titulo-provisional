@@ -6,11 +6,17 @@ public class EnemigoFSM : MonoBehaviour
 {
     [Header("Configuracion")]
     [SerializeField] private string _IDEstadoInicial;
+    
 
     [Header("Estados")]
-    public EstadoFSM[] Estados;
+    [SerializeField]public List<EstadoFSM> Estados;
+
 
     public EstadoFSM EstadoActual {  get; private set; }
+    public Piso PisoActual { get; set; }
+
+    public Transform Jugador { get; set; }
+    
 
     private void Start()
     {
@@ -37,9 +43,13 @@ public class EnemigoFSM : MonoBehaviour
     }
     public EstadoFSM BuscarEstado(string IDEstado)
     {
-        for (int i = 0; i < Estados.Length; i++)
+        for (int i = 0; i < Estados.Count; ++i)
         {
-            return Estados[i];
+            if (Estados[i].IDEstado == IDEstado)
+            {
+                return Estados[i];
+            }
+            
         }
         return null;
     }

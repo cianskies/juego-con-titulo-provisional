@@ -14,6 +14,9 @@ public class PisoContenido : ScriptableObject
     public bool TemporizadorActivo;
     public bool BotonEstaPulsado;
 
+    public EnemigoFSM[] EnemigosDePiso;
+    public int MinEnemigosRonda;
+    public int MaxEnemigosRonda;
 
 
 }

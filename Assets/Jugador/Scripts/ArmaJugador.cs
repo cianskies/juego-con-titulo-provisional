@@ -15,6 +15,7 @@ public class ArmaJugador : MonoBehaviour
     private ArmaScript _arma;
     private int _armaIndex;
     private ArmaScript[] _armasEquipadas=new ArmaScript[2];
+    private bool _armaUsandose=false;
     private void Awake()
     {
         _controlesJugador=new ControlesJugador();
@@ -86,7 +87,7 @@ public class ArmaJugador : MonoBehaviour
     }
     private void CambiarArma()
     {
-        if (_armasEquipadas[1]!=null)
+        if (_armasEquipadas[1]!=null&&_movimientoJugador.Direccion==Vector2.zero&&!_armaUsandose)
         {
             for(int i = 0;i<_armasEquipadas.Length;++i)
             {
@@ -97,7 +98,9 @@ public class ArmaJugador : MonoBehaviour
             _armaIndex = 1 - _armaIndex;
             _arma = _armasEquipadas[_armaIndex];
             _arma.gameObject.SetActive(true);
-            ReinciarPosicionArma();
+
+            RotarPosicionArma(_movimientoJugador.UltimaDireccion);
+            
         }
     }
     private void RotarPosicionArma(Vector3 direccion)
@@ -106,21 +109,23 @@ public class ArmaJugador : MonoBehaviour
         //de hoy maestro de los jodidos vectores, si lees esto, que sepas que probablemente no este vivo
         if (_arma != null)
         {
+
+
+
+
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
+            // Determinar la escala en función de la dirección
+            Vector3 escala = new Vector3(direccion.x > 0f ? 1f : -1f, 1f, 1f); // Mantenemos la escala en Y en 1
 
+            // Reiniciar la rotación y escala del arma
+            Transform posicion = _arma.transform;
+            posicion.rotation = Quaternion.Euler(0f, 0f, angulo);
+            posicion.localScale = escala;
 
-            if (direccion.x > 0f)
-            {
-                _armaPosicionRotacion.localScale = Vector3.one;
-                _arma.transform.localScale = Vector3.one;
-            }
-            else if (direccion.x < 0f)
-            {
-                _armaPosicionRotacion.localScale = new Vector3(-1, 1, 1);
-                _arma.transform.localScale = new Vector3(-1, -1, 1);
-            }
-
+            // Reiniciar la rotación y escala del punto de rotación del arma
+            _armaPosicionRotacion.rotation = Quaternion.Euler(0f, 0f, angulo);
+            _armaPosicionRotacion.localScale = escala;
 
 
             _arma.transform.eulerAngles = new Vector3(0f, 0f, angulo);
@@ -134,21 +139,28 @@ public class ArmaJugador : MonoBehaviour
         {
             if (SuficienteAmmo())
             {
-                Debug.Log("Pium");
+                _armaUsandose = true;
+                //Debug.Log("Pium");
                 _arma.UsarArma();
                 _mStatsJugador.GastarAmmo(_arma.Arma.CosteAmmo);
+                _armaUsandose = false;
 
             }
         }
     private void ReinciarPosicionArma()
     {
+        
+        Vector2 direccion = _movimientoJugador.Direccion;
+        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
         Transform posicion = _arma.transform;
-        posicion.rotation=Quaternion.identity;
+        posicion.rotation=Quaternion.Euler(0f,0f,angulo);
         posicion.localScale = Vector3.one;
         
-        _armaPosicionRotacion.rotation = Quaternion.identity;
+        _armaPosicionRotacion.rotation = Quaternion.Euler(0f, 0f, angulo);
         _armaPosicionRotacion.localScale = Vector3.one;
-        
+        _movimientoJugador.ReiniciarPosicionPersonaje();
+
+
 
     }
      private void OnEnable()

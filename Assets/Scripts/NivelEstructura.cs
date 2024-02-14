@@ -17,4 +17,6 @@ public class Nivel
 {
     public string Nombre;
     public GameObject[] Pisos;
+
+    
 }

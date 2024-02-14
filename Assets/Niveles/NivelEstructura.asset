@@ -17,9 +17,7 @@ MonoBehaviour:
     Pisos:
     - {fileID: 8383301167081655231, guid: 26967301ae06636469cb2a7d46551ebd, type: 3}
     - {fileID: 8383301167081655231, guid: b7f798d5f5444854f8d043de2064be1e, type: 3}
-    - {fileID: 8383301167081655231, guid: e3ed19e9b63ff114eb37c1809a7e2dd6, type: 3}
   - Nombre: Nivel2
     Pisos:
     - {fileID: 8383301167081655231, guid: 6617a56a161c8dd419fcfc0c072dca7e, type: 3}
     - {fileID: 8383301167081655231, guid: aca2d11252e11514487b5c8aa33a959e, type: 3}
-    - {fileID: 8383301167081655231, guid: ada9c77b39ec2f74cae1758cfa4d7cdf, type: 3}

@@ -45,7 +45,7 @@ public class Arma : ItemData
 
     public override void Recoger()
     {
-        Debug.Log("recoger");
+        //Debug.Log("recoger");
         NivelManager.Instancia.Jugador.GetComponent<ArmaJugador>().EquiparArma(ArmaPrefab);
     }
 }

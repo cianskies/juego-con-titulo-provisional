@@ -8,6 +8,7 @@ public class NavegarAccion : AccionFSM
     [SerializeField] private bool _DebugActivado;
 
     [SerializeField] private bool _usarMovimientoAleatorio;
+    [SerializeField] private bool _usarMovimientoATile;
 
     [SerializeField] private float _velocidadMovimiento;
     [SerializeField] private float _distanciaMinima=0.5f;
@@ -17,6 +18,7 @@ public class NavegarAccion : AccionFSM
     [SerializeField] private LayerMask _obstaculoMask;
     [SerializeField] private float _radioDeteccionObstaculos;
 
+    private EnemigoFSM _enemigoFSM;
     private Vector3 _posicionMovimiento;
     private Vector3 _direccionMovimiento;
     public override void EjecutarAccionFSM()
@@ -28,7 +30,10 @@ public class NavegarAccion : AccionFSM
             GenerarNuevaDireccion();
         }
     }
-
+    private void Awake()
+    {
+        _enemigoFSM=GetComponent<EnemigoFSM>();
+    }
     void Start()
     {
         GenerarNuevaDireccion();
@@ -45,6 +50,10 @@ public class NavegarAccion : AccionFSM
         if(_usarMovimientoAleatorio)
         {
             _posicionMovimiento=transform.position+getDireccionRandom();
+        }
+        if (_usarMovimientoATile)
+        {
+            _posicionMovimiento = _enemigoFSM.PisoActual.ObtenerTileDisponible();
         }
     }
     private Vector3 getDireccionRandom()

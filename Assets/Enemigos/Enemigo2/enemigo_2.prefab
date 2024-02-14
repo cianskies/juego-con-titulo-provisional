@@ -9,13 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7832346395728256661}
+  - component: {fileID: 5529245270534723180}
+  - component: {fileID: 421628495216255469}
   - component: {fileID: 5811195023450106991}
   - component: {fileID: 2400544555701261862}
   - component: {fileID: 8822618866218353136}
   - component: {fileID: 8609771774148331104}
   - component: {fileID: 1740808113767727221}
   - component: {fileID: 1032365886544216611}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemigo_2
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -37,6 +39,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5529245270534723180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439009692540431703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8bd4d9643bd0c43b9c89cd86dfc72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DebugActivado: 0
+  _usarMovimientoAleatorio: 0
+  _usarMovimientoATile: 1
+  _velocidadMovimiento: 2
+  _distanciaMinima: 0.5
+  _rangoMovimiento: {x: 5, y: 5}
+  _obstaculoMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _radioDeteccionObstaculos: 0.4
+--- !u!114 &421628495216255469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439009692540431703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a706d61951f39cc4d9be1bb2a6063dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mostrarDebug: 0
+  _radioDeteccionEnemigo: 3
+  _jugadorMask:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!114 &5811195023450106991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,8 +90,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b348eb1ff8fcb4e8b15d8127ddbd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _IDEstadoInicial: 
-  Estados: []
+  _IDEstadoInicial: Movimiento
+  Estados:
+  - IDEstado: Movimiento
+    Acciones:
+    - {fileID: 5529245270534723180}
+    - {fileID: 421628495216255469}
+    Transiciones: []
 --- !u!212 &2400544555701261862
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -146,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
 --- !u!50 &8609771774148331104
 Rigidbody2D:

@@ -9,14 +9,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848810885493837180}
-  - component: {fileID: 2395568106393465338}
   - component: {fileID: 8356169937693797113}
+  - component: {fileID: 6043342608766408399}
+  - component: {fileID: 2138241782622915640}
+  - component: {fileID: -5367924294344888281}
+  - component: {fileID: 2395568106393465338}
   - component: {fileID: 6707699095568826860}
   - component: {fileID: 6017366707668020098}
   - component: {fileID: 5506195013733572337}
   - component: {fileID: 9014342794062563672}
   - component: {fileID: 938161296384608116}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemigo_1
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -38,27 +41,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2395568106393465338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7905106972324682947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8bd4d9643bd0c43b9c89cd86dfc72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _DebugActivado: 1
-  _usarMovimientoAleatorio: 1
-  _velocidadMovimiento: 3
-  _distanciaMinima: 0.5
-  _rangoMovimiento: {x: 3, y: 3}
-  _obstaculoMask:
-    serializedVersion: 2
-    m_Bits: 256
-  _radioDeteccionObstaculos: 0.5
 --- !u!114 &8356169937693797113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +58,82 @@ MonoBehaviour:
   - IDEstado: Movimiento
     Acciones:
     - {fileID: 2395568106393465338}
+    - {fileID: -5367924294344888281}
+    Transiciones:
+    - Decision: {fileID: 2138241782622915640}
+      EstadoTrue: Atacar
+      EstadoFalse: 
+  - IDEstado: Atacar
+    Acciones:
+    - {fileID: 6043342608766408399}
     Transiciones: []
+--- !u!114 &6043342608766408399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905106972324682947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae85a4b46c88a84fb9b34811a5de01c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2138241782622915640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905106972324682947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c29941671e405498f404f8c55b0163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mostrarDebug: 1
+  _obstaculoMask:
+    serializedVersion: 2
+    m_Bits: 384
+--- !u!114 &-5367924294344888281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905106972324682947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a706d61951f39cc4d9be1bb2a6063dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mostrarDebug: 1
+  _radioDeteccionEnemigo: 4
+  _jugadorMask:
+    serializedVersion: 2
+    m_Bits: 8192
+--- !u!114 &2395568106393465338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905106972324682947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8bd4d9643bd0c43b9c89cd86dfc72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DebugActivado: 0
+  _usarMovimientoAleatorio: 1
+  _usarMovimientoATile: 0
+  _velocidadMovimiento: 3
+  _distanciaMinima: 0.5
+  _rangoMovimiento: {x: 3, y: 3}
+  _obstaculoMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _radioDeteccionObstaculos: 0.4
 --- !u!212 &6707699095568826860
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -172,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
 --- !u!50 &5506195013733572337
 Rigidbody2D:

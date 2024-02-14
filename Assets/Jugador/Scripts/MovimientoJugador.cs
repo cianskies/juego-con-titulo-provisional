@@ -28,9 +28,12 @@ public class JugadorMovimiento : MonoBehaviour
     [SerializeField] private Vector2 _ultimaDireccion;
     private float _velocidad;
 
+
     private bool _inputActivado = true;
 
     public Vector2 Direccion=>_direccion;
+    public Vector2 UltimaDireccion => _ultimaDireccion;
+
 
     private void Awake()
     {
@@ -109,19 +112,11 @@ public class JugadorMovimiento : MonoBehaviour
 
         }
     }
-    public void GirarPersonajeSoloDerecha()
+    public void ReiniciarPosicionPersonaje()
     {
-        _animator.SetFloat("DireccionX", _direccion.x);
-        _animator.SetFloat("DireccionY", _direccion.y);
-
-        if (_direccion.x >= 0.1f)
-        {
-            _spriteRenderer.flipX = false;
-        }
-        else if (_direccion.x < 0f)
-        {
-            _spriteRenderer.flipX = true;
-        }
+        transform.position = Vector2.down;
+        _direccion = Vector2.down;
+        AnimarMovimiento();
     }
     private void Esprintar()
     {
