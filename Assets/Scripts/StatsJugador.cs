@@ -11,8 +11,8 @@ public class StatsJugador : ScriptableObject
     public float SaludBase;
     public float EscudoBase;
     public float AtaqueBase;
-    public float AmmoBase;
     public float DineroBase;
+    public float AmmoBase;
     public float PorcentajeCritBase;
     public float AtaqueCriticoBase;
     public float SuerteBase;

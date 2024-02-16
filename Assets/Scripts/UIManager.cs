@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _barraMagia;
     [SerializeField] private TextMeshProUGUI _ammoText;
 
+    [SerializeField] private TextMeshProUGUI _temporizadorText;
+    [SerializeField] private TextMeshProUGUI _rondaText;
+    [SerializeField] private TextMeshProUGUI _enemigosEnPisoText;
+
     //falta hacer el delay del sprint
 
 
@@ -31,5 +35,9 @@ public class UIManager : MonoBehaviour
         _barraSalud.fillAmount=Mathf.Lerp(_barraSalud.fillAmount,_statsJugador.Salud/_statsJugador.SaludBase,10f*Time.deltaTime);
         _barraEscudo.fillAmount=Mathf.Lerp(_barraEscudo.fillAmount,_statsJugador.Escudo/_statsJugador.EscudoBase,10f*Time.deltaTime);
         _barraMagia.fillAmount=Mathf.Lerp(_barraMagia.fillAmount,_statsJugador.Ammo /_statsJugador.AmmoBase,10f*Time.deltaTime);
+
+        _rondaText.text = $"{Piso.Instancia.Estructura.RondaActual}";
+        //
+        _enemigosEnPisoText.text= $"{Piso.Instancia.Estructura.EnemigosDePiso}";
     }
 }

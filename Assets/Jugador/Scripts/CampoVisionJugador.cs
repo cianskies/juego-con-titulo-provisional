@@ -50,7 +50,7 @@ public class CampoVisionJugador : MonoBehaviour
                 //si no hay obstaculos se añade a la lista de enemigos en el campo de vision
                 if (_listaEnemigosCampoVisionActual.Contains(_listaEnemigos[i])==false)
                 {
-                    Debug.Log("Veo un enemigo");
+                    //Debug.Log("Veo un enemigo");
                     //Debug.Log(_listaEnemigosCampoVisionActual.Count);
                     _listaEnemigosCampoVisionActual.Add(_listaEnemigos[i]);
                 }
@@ -61,7 +61,7 @@ public class CampoVisionJugador : MonoBehaviour
                 //Si deja de detectar al enemigo se elimina de la lista de enemigos a la vista
                 if (_listaEnemigosCampoVisionActual.Contains(_listaEnemigos[i]))
                 {
-                    Debug.Log("Ya no veo un enemigo");
+                    //Debug.Log("Ya no veo un enemigo");
                     _listaEnemigosCampoVisionActual.Remove(_listaEnemigos[i]);
                 }
                 if (EnemigoTarget = _listaEnemigos[i])

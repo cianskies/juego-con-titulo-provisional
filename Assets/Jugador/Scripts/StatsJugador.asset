@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: StatsJugador
   m_EditorClassIdentifier: 
   LVLBase: 1
-  SaludBase: 35
+  SaludBase: 15
   EscudoBase: 5
   AtaqueBase: 1
-  AmmoBase: 25
   DineroBase: 0
+  AmmoBase: 250
   PorcentajeCritBase: 5
   AtaqueCriticoBase: 2
   SuerteBase: 1
   LVL: 1
-  Salud: 35
+  Salud: 15
   Escudo: 5
   Ataque: 1
-  Ammo: 6
+  Ammo: 212
   Dinero: 0
   PorcentajeCrit: 5
   AtaqueCritico: 2

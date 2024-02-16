@@ -112,7 +112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MostrarDebug: 1
+  _obstaculoMask:
+    serializedVersion: 2
+    m_Bits: 0
   _radioCampoVision: 4
+  _listaEnemigos: []
+  _listaEnemigosCampoVisionActual: []
 --- !u!1 &6922709847740295850
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _armaPosicionRotacion: {fileID: 8005174590270158224}
+  _statsJugador: {fileID: 11400000, guid: 09c9119a7eabbc449b0424bfd6064263, type: 2}
 --- !u!1001 &6386356575556453067
 PrefabInstance:
   m_ObjectHideFlags: 0

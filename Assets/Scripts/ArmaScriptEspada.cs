@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArmaScriptEspada : ArmaScript
 {
+
+    
     public override void UsarArma()
     {
         AnimarHit();
@@ -13,7 +15,7 @@ public class ArmaScriptEspada : ArmaScript
     {
         if (collision.GetComponent<IRecbirDanho>() != null)
         {
-            collision.GetComponent<IRecbirDanho>().RecibirDanho(1);
+            collision.GetComponent<IRecbirDanho>().RecibirDanho(_arma.Ataque);
             Debug.Log("Recibe daño de esapada");
         }
 

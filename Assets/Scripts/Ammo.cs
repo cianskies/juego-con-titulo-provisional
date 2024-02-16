@@ -20,7 +20,8 @@ public class Ammo : MonoBehaviour
     {
         if (collision.GetComponent<IRecbirDanho>()!=null)
         {
-            collision.GetComponent<IRecbirDanho>().RecibirDanho(1);
+            //Debug.Log(_atk);
+            collision.GetComponent<IRecbirDanho>().RecibirDanho(_atk);
             Destroy(gameObject);
         }
             

@@ -11,6 +11,7 @@ public class NivelManager : MonoBehaviour
 
 
     private GameObject _nivel;
+    private Piso _scriptPiso;
     private int _indiceNivel = 0;
     private int _indicePiso = 0;
 
@@ -30,6 +31,8 @@ public class NivelManager : MonoBehaviour
     private void CrearNivel()
     {
         _nivel = Instantiate(_estructura.Niveles[_indiceNivel].Pisos[_indicePiso], transform);
+        _scriptPiso=_nivel.GetComponent<Piso>();
+        Jugador.transform.position = _scriptPiso.PosicionInicial;
     }
 
 

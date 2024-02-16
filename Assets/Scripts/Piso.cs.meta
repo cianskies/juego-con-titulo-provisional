@@ -3,7 +3,11 @@ guid: aee1d478c6574324fa40178e357cc532
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _tileMapExtra: {instanceID: 0}
+  - _estructura: {instanceID: 0}
+  - _puerta1: {instanceID: 0}
+  - _posicionJugador: {fileID: 3380290520188894690, guid: c381d1d536f1d4147b3cfd59f81ab286, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

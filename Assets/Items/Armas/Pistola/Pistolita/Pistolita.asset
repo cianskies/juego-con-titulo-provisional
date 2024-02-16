@@ -17,11 +17,11 @@ MonoBehaviour:
   Nombre: Pistolita
   Tipo: 0
   Rango: 0
-  Ataque: 1
+  Ataque: 4
   CosteMp: 0
-  Delay: 0.2
+  Delay: 0
   DispersionMin: -3
   DispersionMax: 3
-  Ammo: 25
+  Ammo: 250
   CosteAmmo: 1
   ArmaPrefab: {fileID: 8064076573574279704, guid: eeea22704c447764e80e188f93a47a06, type: 3}

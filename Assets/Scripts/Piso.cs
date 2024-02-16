@@ -19,16 +19,27 @@ public class Piso : MonoBehaviour
 
     [SerializeField] private PisoContenido _estructura;
     [SerializeField] private Puerta _puerta1;
+
+    [SerializeField] private Vector3 _posicionInicial;
+
+
+    private int _numeroEnemigosEnPiso;
     
     private Dictionary<Vector3, bool> _listaTiles= new Dictionary<Vector3, bool>();
 
     public static Piso Instancia;
+    public Vector3 PosicionInicial { get { return _posicionInicial; } }
+
+    public PisoContenido Estructura {  get { return _estructura; } }
+    
 
 
     private void Awake()
     {
+
         Instancia = this;
         _estructura.RondaActual = 0;
+        _numeroEnemigosEnPiso = 0;
         _estructura.TemporizadorActivo = false;
         _estructura.BotonEstaPulsado = false;
        
@@ -37,6 +48,7 @@ public class Piso : MonoBehaviour
     {
         BloquearPuertas();
         GetTiles();
+
     }
     private void GetTiles()
     {
@@ -78,10 +90,7 @@ public class Piso : MonoBehaviour
             InstanciarEnemigosDeRonda();
             StartCoroutine(IETemporizador());
         }
-        else
-        {
-            DesbloquearPuertas();
-        }
+        
     }
 
     private IEnumerator IETemporizador()
@@ -98,6 +107,7 @@ public class Piso : MonoBehaviour
     private void InstanciarEnemigosDeRonda()
     {
         int numeroEnemigos=GenerarNumeroEnemigosRonda();
+        _numeroEnemigosEnPiso += numeroEnemigos;
         for (int i = 0; i < numeroEnemigos; ++i)
         {
 
@@ -139,14 +149,25 @@ public class Piso : MonoBehaviour
         //Debug.Log("Las Puertas se han bloqueado");
         _puerta1.Cerrar();
     }
+    private void RespuestaEventoNotificarMuerteEnemigo()
+    {
+        --_numeroEnemigosEnPiso;
+        if(getNumeroRondasRestantes()==0&&_numeroEnemigosEnPiso==0) {
+            DesbloquearPuertas();
+            Debug.Log("Nivel superado");
+        }
+    }
     private void OnEnable()
     {
         PisoBoton.EventoPulsarBoton += RespuestaEventoPulsarBoton;
+        StatsEnemigo.EventoNotificarMuerteEnemigo += RespuestaEventoNotificarMuerteEnemigo;
     }
     private void OnDisable()
     {
         PisoBoton.EventoPulsarBoton -= RespuestaEventoPulsarBoton;
+        StatsEnemigo.EventoNotificarMuerteEnemigo -= RespuestaEventoNotificarMuerteEnemigo;
     }
+
     private void OnDrawGizmos()
     {
         if (_mostrarDebug)

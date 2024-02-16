@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005b18c75f7bd0745bb533d5e5e29d80, type: 3}
+  m_Name: arma_enemigo_1
+  m_EditorClassIdentifier: 
+  ID: 0
+  Icono: {fileID: -786869666, guid: ffe30cd53adad2a448a35f835194b911, type: 3}
+  Nombre: Ak-47
+  Tipo: 2
+  Rango: 0
+  Ataque: 1
+  CosteMp: 0
+  Delay: 3
+  DispersionMin: 0
+  DispersionMax: 0
+  Ammo: 0
+  CosteAmmo: 0
+  ArmaPrefab: {fileID: 3895654400466547015, guid: efecbc5e2825a8144af1f626db1ced9a, type: 3}

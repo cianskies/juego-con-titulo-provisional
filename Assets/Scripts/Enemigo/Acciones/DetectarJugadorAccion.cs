@@ -30,6 +30,10 @@ public class DetectarJugadorAccion : AccionFSM
 
 
         }
+        else
+        {
+            _enemigoFSM.Jugador = null;
+        }
     }
     private void OnDrawGizmos()
     {
