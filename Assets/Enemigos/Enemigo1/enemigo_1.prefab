@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c29941671e405498f404f8c55b0163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mostrarDebug: 1
+  _mostrarDebug: 0
   _obstaculoMask:
     serializedVersion: 2
     m_Bits: 384
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a706d61951f39cc4d9be1bb2a6063dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mostrarDebug: 1
+  _mostrarDebug: 0
   _radioDeteccionEnemigo: 4
   _jugadorMask:
     serializedVersion: 2
