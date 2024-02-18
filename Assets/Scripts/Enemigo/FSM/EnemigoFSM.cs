@@ -20,7 +20,10 @@ public class EnemigoFSM : MonoBehaviour
 
     private void Start()
     {
-        CambiarEstado(_IDEstadoInicial);
+        if (_IDEstadoInicial != null)
+        {
+            CambiarEstado(_IDEstadoInicial);
+        }
     }
     private void Update()
     {

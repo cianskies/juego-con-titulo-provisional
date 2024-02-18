@@ -29,7 +29,7 @@ public class JugadorALaVistaDecision : DecisionFSM
                 direccionAlJugador.magnitude,_obstaculoMask);
             if(hit2D.collider == null)
             {
-
+                //Debug.Log("Veo al jugador");
                 return true;
             }
         }

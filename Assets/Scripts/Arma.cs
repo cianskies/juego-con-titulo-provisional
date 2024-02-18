@@ -39,6 +39,8 @@ public class Arma : ItemData
     public float Ammo;
     public float CosteAmmo;
 
+    public float CosteCompra;
+    public float CosteVenta;
 
     public ArmaScript ArmaPrefab;
 
@@ -46,6 +48,6 @@ public class Arma : ItemData
     public override void Recoger()
     {
         //Debug.Log("recoger");
-        NivelManager.Instancia.Jugador.GetComponent<ArmaJugador>().EquiparArma(ArmaPrefab);
+        NivelManager.Instancia.JugadorPosicion.GetComponent<ArmaJugador>().EquiparArma(ArmaPrefab);
     }
 }

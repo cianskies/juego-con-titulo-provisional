@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 
-public class ModificadorStatsJugador : MonoBehaviour
+public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
 {
     [SerializeField] private StatsJugador _statsJugador;
    
@@ -15,6 +15,8 @@ public class ModificadorStatsJugador : MonoBehaviour
         _statsJugador.Escudo = _statsJugador.EscudoBase;
         _statsJugador.LVL = _statsJugador.LVLBase;
         _statsJugador.Ataque = _statsJugador.AtaqueBase;
+        _statsJugador.Ammo = 1;
+        _statsJugador.AmmoBase = 1;
         _statsJugador.PorcentajeCrit = _statsJugador.PorcentajeCritBase;
         _statsJugador.Suerte = _statsJugador.SuerteBase;
         _statsJugador.AtaqueCritico = _statsJugador.AtaqueCriticoBase;
@@ -115,17 +117,6 @@ public class ModificadorStatsJugador : MonoBehaviour
 
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RecibirDanho(1);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Curar(1);
-        }
-    }
 
 
     //proximamente subidas de nivel multiplicadores de danho y movidas similares
