@@ -15,10 +15,10 @@ public class ArmaEnemigo : ArmaPersonaje
     
     private void Update()
     {
-        if (NivelManager.Instancia.Jugador != null)
+        if (NivelManager.Instancia.JugadorPosicion != null)
         {
             //Debug.Log("Rotar a player");
-            Vector3 direccionAJugador = NivelManager.Instancia.Jugador.transform.position-transform.position;
+            Vector3 direccionAJugador = NivelManager.Instancia.JugadorPosicion.transform.position-transform.position;
             RotarPosicionArma(direccionAJugador);
         }
     }

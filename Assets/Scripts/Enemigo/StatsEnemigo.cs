@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class StatsEnemigo : MonoBehaviour, IRecbirDanho
 {
-    public static event Action EventoNotificarMuerteEnemigo;
+    public delegate void DelegadoEnemigoDestruido(StatsEnemigo enemigo);
+    public static event DelegadoEnemigoDestruido EventoNotificarMuerteEnemigo;
     [SerializeField] private float _salud;
 
     private SpriteRenderer _spriteRenderer;
@@ -43,7 +44,7 @@ public class StatsEnemigo : MonoBehaviour, IRecbirDanho
         MostrarColorRecibirDanho();
         if(_saludActual <= 0)
         {
-            EventoNotificarMuerteEnemigo?.Invoke();
+            EventoNotificarMuerteEnemigo?.Invoke(this);
             Destroy(gameObject);
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEditor.Search;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class ItemData : ScriptableObject
     public int ID;
     public Sprite Icono;
     public string Nombre;
+
 
     public virtual void Recoger()
     {

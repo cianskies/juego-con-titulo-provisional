@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 441b9157352d0064a95cf2f986222c6e
+guid: 73c794527a1885a4caf737c3a5d95103
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prota_trasero64X128_0
+      name: prota_perfil164x128_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11f7ba62cf9d7884887de74548496d77
-      internalID: 356257765
+      spriteID: f0d31ed8051071f44b6cb26057fc751a
+      internalID: 1626805522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_trasero64X128_1
+      name: prota_perfil164x128_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da12fe72a80f96a44b63c1cf4a7b2023
-      internalID: 1176973203
+      spriteID: 519da5a23b1064e468b49044057dad50
+      internalID: 1754731356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_trasero64X128_2
+      name: prota_perfil164x128_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fc2ce217823ab248959c4893ead9501
-      internalID: -725463079
+      spriteID: f8bbbc8a4eef5f34da923607e8ed2b5d
+      internalID: 1171832912
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      prota_trasero64X128_0: 356257765
-      prota_trasero64X128_1: 1176973203
-      prota_trasero64X128_2: -725463079
+      prota_perfil164x128_0: 1626805522
+      prota_perfil164x128_1: 1754731356
+      prota_perfil164x128_2: 1171832912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

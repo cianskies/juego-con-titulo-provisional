@@ -19,9 +19,11 @@ MonoBehaviour:
   Rango: 0
   Ataque: 1
   CosteMp: 0
-  Delay: 3
+  Delay: 1
   DispersionMin: 0
   DispersionMax: 0
   Ammo: 0
   CosteAmmo: 0
+  CosteCompra: 0
+  CosteVenta: 0
   ArmaPrefab: {fileID: 3895654400466547015, guid: efecbc5e2825a8144af1f626db1ced9a, type: 3}

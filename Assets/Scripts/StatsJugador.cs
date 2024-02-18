@@ -16,6 +16,7 @@ public class StatsJugador : ScriptableObject
     public float PorcentajeCritBase;
     public float AtaqueCriticoBase;
     public float SuerteBase;
+    public float GilesBase;
     //Extra
 
     [Header("Stats")]

@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _rondaText;
     [SerializeField] private TextMeshProUGUI _enemigosEnPisoText;
 
+    [SerializeField] private Temporizador _temporizador;
+
+    [SerializeField] private TextMeshProUGUI _monedasText;
+
     //falta hacer el delay del sprint
 
 
@@ -38,6 +42,10 @@ public class UIManager : MonoBehaviour
 
         _rondaText.text = $"{Piso.Instancia.Estructura.RondaActual}";
         //
-        _enemigosEnPisoText.text= $"{Piso.Instancia.Estructura.EnemigosDePiso}";
+        _enemigosEnPisoText.text= $"{Piso.Instancia.EnemigosPisoActual}";
+
+        _temporizadorText.text = $"{_temporizador.Minutos}:{_temporizador.Segundos}";
+
+        _monedasText.text = $"{_statsJugador.Dinero}";
     }
 }

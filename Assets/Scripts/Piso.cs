@@ -9,7 +9,9 @@ using Random = UnityEngine.Random;
 
 public class Piso : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public delegate void NotificarTemporizador(float tiempo);
+
+    public static event NotificarTemporizador EstablecerNuevoTiempoTemporizador;
 
     [Header("Debug")]
     [SerializeField] private bool _mostrarDebug;
@@ -22,9 +24,17 @@ public class Piso : MonoBehaviour
 
     [SerializeField] private Vector3 _posicionInicial;
 
+    private List<StatsEnemigo> _listaEnemigosEnPisoActual;
 
-    private int _numeroEnemigosEnPiso;
     
+
+    
+
+    public int EnemigosPisoActual { get { return _listaEnemigosEnPisoActual.Count; } }
+
+
+
+
     private Dictionary<Vector3, bool> _listaTiles= new Dictionary<Vector3, bool>();
 
     public static Piso Instancia;
@@ -39,7 +49,7 @@ public class Piso : MonoBehaviour
 
         Instancia = this;
         _estructura.RondaActual = 0;
-        _numeroEnemigosEnPiso = 0;
+        _listaEnemigosEnPisoActual = new List<StatsEnemigo>();
         _estructura.TemporizadorActivo = false;
         _estructura.BotonEstaPulsado = false;
        
@@ -95,8 +105,10 @@ public class Piso : MonoBehaviour
 
     private IEnumerator IETemporizador()
     {
-        
+        EstablecerNuevoTiempoTemporizador?.Invoke(_estructura.SegundosPorRonda);
+
         yield return new WaitForSeconds(_estructura.SegundosPorRonda);
+
         //Debug.Log("Termina la ronda " + _estructura.RondaActual);
         if(_estructura.BotonEstaPulsado)
         {
@@ -107,11 +119,11 @@ public class Piso : MonoBehaviour
     private void InstanciarEnemigosDeRonda()
     {
         int numeroEnemigos=GenerarNumeroEnemigosRonda();
-        _numeroEnemigosEnPiso += numeroEnemigos;
         for (int i = 0; i < numeroEnemigos; ++i)
         {
 
             EnemigoFSM enemigo=Instantiate(ObtenerFSMEnemigoRandom(), ObtenerTileDisponible(), Quaternion.identity,transform);
+            _listaEnemigosEnPisoActual.Add(enemigo.GetComponent<StatsEnemigo>());
             enemigo.PisoActual = Instancia;
         }
     }
@@ -149,10 +161,10 @@ public class Piso : MonoBehaviour
         //Debug.Log("Las Puertas se han bloqueado");
         _puerta1.Cerrar();
     }
-    private void RespuestaEventoNotificarMuerteEnemigo()
+    private void RespuestaEventoNotificarMuerteEnemigo(StatsEnemigo enemigo)
     {
-        --_numeroEnemigosEnPiso;
-        if(getNumeroRondasRestantes()==0&&_numeroEnemigosEnPiso==0) {
+        _listaEnemigosEnPisoActual.Remove(enemigo);
+        if(getNumeroRondasRestantes()==0 && _listaEnemigosEnPisoActual.Count == 0) {
             DesbloquearPuertas();
             Debug.Log("Nivel superado");
         }

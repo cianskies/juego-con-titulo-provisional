@@ -117,17 +117,6 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
 
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RecibirDanho(1);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Curar(1);
-        }
-    }
 
 
     //proximamente subidas de nivel multiplicadores de danho y movidas similares
