@@ -21,7 +21,7 @@ public class JugadorALaVistaDecision : DecisionFSM
 
     private bool conozcoPosicionDeJugador(EnemigoFSM enemigo)
     {
-        
+        bool conozcoPosicionDeJugador = false;   
         if(_enemigoFSM.Jugador!=null) {
             
             Vector3 direccionAlJugador=enemigo.Jugador.position-transform.position;
@@ -29,11 +29,13 @@ public class JugadorALaVistaDecision : DecisionFSM
                 direccionAlJugador.magnitude,_obstaculoMask);
             if(hit2D.collider == null)
             {
-                //Debug.Log("Veo al jugador");
-                return true;
+                Debug.Log("Veo al jugador");
+                conozcoPosicionDeJugador = true;
             }
         }
-        return false;
+        
+        return conozcoPosicionDeJugador;
+        
         
     }
 

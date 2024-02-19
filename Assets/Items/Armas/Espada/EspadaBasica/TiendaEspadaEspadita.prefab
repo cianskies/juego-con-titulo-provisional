@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: eefdee4bb70b1df439cb7dc3185630c6, type: 2}
-  _valor: 1
+  _valor: 20

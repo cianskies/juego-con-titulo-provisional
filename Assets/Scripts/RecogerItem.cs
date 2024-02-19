@@ -15,7 +15,7 @@ public class RecogerItem : MonoBehaviour
     {
         _controlesJugador=new ControlesJugador();
     }
-    private void Start()
+    protected void Start()
     {
         _controlesJugador.Acciones.Recoger.performed += ctx => Recoger();
     }
@@ -28,14 +28,14 @@ public class RecogerItem : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             _sePuedeRecoger = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -43,11 +43,11 @@ public class RecogerItem : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
        _controlesJugador.Enable();
     }
-    private void OnDisable()
+    protected void OnDisable()
     {
         _controlesJugador.Disable();
     }

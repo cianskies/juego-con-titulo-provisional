@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 8609771774148331104}
   - component: {fileID: 1740808113767727221}
   - component: {fileID: 1032365886544216611}
+  - component: {fileID: 4485800421524606184}
   m_Layer: 9
   m_Name: enemigo_2
   m_TagString: Enemigo
@@ -86,8 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _DebugActivado: 0
-  _usarMovimientoAleatorio: 0
-  _usarMovimientoATile: 1
+  _usarMovimientoAleatorio: 1
+  _usarMovimientoATile: 0
   _velocidadMovimiento: 2
   _distanciaMinima: 0.5
   _rangoMovimiento: {x: 5, y: 5}
@@ -324,3 +325,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _salud: 4
+--- !u!114 &4485800421524606184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439009692540431703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164f783dc02168e46a1021ae4b1bd8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _armaPosicionRotacion: {fileID: 4637427847752999153}
+  _armaPorDefecto: {fileID: 3895654400466547015, guid: efecbc5e2825a8144af1f626db1ced9a, type: 3}

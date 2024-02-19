@@ -26,12 +26,13 @@ public class DetectarJugadorAccion : AccionFSM
             _radioDeteccionEnemigo, _resultadosColisiones, _jugadorMask);
         if (numeroColisiones > 0)
         {
+            //Debug.Log("Conzco el transform de mi player");
             _enemigoFSM.Jugador = _resultadosColisiones[0].transform;
-
 
         }
         else
         {
+            //Debug.Log("ya no conzco el transform de mi player");
             _enemigoFSM.Jugador = null;
         }
     }

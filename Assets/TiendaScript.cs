@@ -14,7 +14,7 @@ public class TiendaScript : MonoBehaviour
         for (int i = 0; i < _tienda.itemsTienda.Length; i++)
         {
             _itemTienda[i] = Instantiate(_tienda.itemsTienda[i], _posicionItem,Quaternion.identity,transform.parent);
-            _posicionItem += Vector3.right;
+            _posicionItem += Vector3.right*2;
         }
     }
     

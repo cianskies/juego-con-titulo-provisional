@@ -19,7 +19,7 @@ public class GestorDeAmmo : MonoBehaviour
             }
             
         }
-        Debug.Log(_listaAmmoEnPantalla.Count);
+        //Debug.Log(_listaAmmoEnPantalla.Count);
     }
 
     private void OnEnable()

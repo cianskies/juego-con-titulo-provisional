@@ -12,13 +12,13 @@ public class ComprableTienda : RecogerItem
     public float Valor { get { return _valor; } set { _valor = value; } }
     public override void Recoger()
     {
-        if (sePuedeComprar())
+        if (sePuedeComprar()&& _sePuedeRecoger)
         {
-            if (_sePuedeRecoger)
-            {
+
+                Debug.Log("Compraste un item");
                 _item.Recoger();
                 Destroy(gameObject);
-            }
+
             NivelManager.Instancia.StatsJugador.GastarDinero(_valor);
         }
 
