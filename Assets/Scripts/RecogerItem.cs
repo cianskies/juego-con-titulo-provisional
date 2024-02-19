@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class RecogerItem : MonoBehaviour
 {
-    [SerializeField] private ItemData _item;
+    [SerializeField] protected ItemData _item;
+    
 
     private ControlesJugador _controlesJugador;
 
-    private bool _itemAlAlcance;
+    protected bool _sePuedeRecoger;
 
     private void Awake()
     {
@@ -18,9 +19,9 @@ public class RecogerItem : MonoBehaviour
     {
         _controlesJugador.Acciones.Recoger.performed += ctx => Recoger();
     }
-    private void Recoger()
+    public virtual void Recoger()
     {
-        if(_itemAlAlcance)
+        if(_sePuedeRecoger)
         {
             _item.Recoger();
             Destroy(gameObject);
@@ -31,14 +32,14 @@ public class RecogerItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            _itemAlAlcance = true;
+            _sePuedeRecoger = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            _itemAlAlcance = false;
+            _sePuedeRecoger = false;
         }
     }
 

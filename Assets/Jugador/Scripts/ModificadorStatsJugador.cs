@@ -117,7 +117,10 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
 
     }
 
-
+    public float GetDinero()
+    {
+        return _statsJugador.Dinero;
+    }
 
     //proximamente subidas de nivel multiplicadores de danho y movidas similares
 }
