@@ -7,7 +7,7 @@ using UnityEngine;
 public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
 {
     [SerializeField] private StatsJugador _statsJugador;
-   
+    
 
     public void Awake()
     {

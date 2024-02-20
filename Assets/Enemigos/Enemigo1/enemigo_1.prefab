@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mostrarDebug: 1
-  _radioDeteccionEnemigo: 3
+  _radioDeteccionEnemigo: 4
   _jugadorMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -101,12 +101,16 @@ MonoBehaviour:
     - {fileID: 6833161236442783137}
     Transiciones:
     - Decision: {fileID: 949851924441770074}
-      EstadoTrue: Atacar
+      EstadoTrue: Seguir
       EstadoFalse: 
-  - IDEstado: Seguir a Jugador
+  - IDEstado: Seguir
     Acciones:
     - {fileID: 3968231502015571920}
-    Transiciones: []
+    - {fileID: 6833161236442783137}
+    Transiciones:
+    - Decision: {fileID: 949851924441770074}
+      EstadoTrue: 
+      EstadoFalse: Movimiento
 --- !u!114 &3968231502015571920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +139,7 @@ MonoBehaviour:
   _mostrarDebug: 0
   _obstaculoMask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 256
 --- !u!212 &5320868972734656878
 SpriteRenderer:
   m_ObjectHideFlags: 0

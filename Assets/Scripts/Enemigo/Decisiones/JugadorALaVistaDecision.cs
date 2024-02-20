@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class JugadorALaVistaDecision : DecisionFSM
 {
+
+
     [SerializeField] private bool _mostrarDebug;
     [SerializeField] private LayerMask _obstaculoMask;
 
-    
+
     private EnemigoFSM _enemigoFSM;
 
     private void Awake()
@@ -21,29 +23,28 @@ public class JugadorALaVistaDecision : DecisionFSM
 
     private bool conozcoPosicionDeJugador(EnemigoFSM enemigo)
     {
-        bool conozcoPosicionDeJugador = false;   
-        if(_enemigoFSM.Jugador!=null) {
-            
-            Vector3 direccionAlJugador=enemigo.Jugador.position-transform.position;
+
+        if (_enemigoFSM.Jugador != null)
+        {
+
+            Vector3 direccionAlJugador = enemigo.Jugador.position - transform.position;
             RaycastHit2D hit2D = Physics2D.Raycast(transform.position, direccionAlJugador.normalized,
-                direccionAlJugador.magnitude,_obstaculoMask);
-            if(hit2D.collider == null)
+                direccionAlJugador.magnitude, _obstaculoMask);
+            if (hit2D.collider == null)
             {
                 Debug.Log("Veo al jugador");
-                conozcoPosicionDeJugador = true;
+                return true;
             }
         }
-        
-        return conozcoPosicionDeJugador;
-        
-        
+        return false;
+
     }
 
     private void OnDrawGizmos()
     {
-        if(_mostrarDebug&&_enemigoFSM!=null&&_enemigoFSM.Jugador!=null)
+        if (_mostrarDebug && _enemigoFSM != null && _enemigoFSM.Jugador != null)
         {
-            Gizmos.color=conozcoPosicionDeJugador(_enemigoFSM)?Color.green:Color.red;
+            Gizmos.color = conozcoPosicionDeJugador(_enemigoFSM) ? Color.green : Color.red;
             Gizmos.DrawLine(transform.position, _enemigoFSM.Jugador.position);
         }
     }

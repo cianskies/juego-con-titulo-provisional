@@ -7,19 +7,19 @@ public class SeguirAJugadorAccion : AccionFSM
 
     private EnemigoFSM _enemigoFSM;
     [SerializeField] private float _velocidad;
-    private Vector3 _nuevaPosicion;
 
     public override void EjecutarAccionFSM()
     {
-        if (_nuevaPosicion != Vector3.zero)
-        {
-            // Mueve al enemigo hacia la nueva posición
-            transform.position = Vector3.MoveTowards(transform.position, _nuevaPosicion, _velocidad * Time.deltaTime);
-            // Limpia la variable de nueva posición para evitar seguir moviéndose hacia ella en las siguientes actualizaciones
-            _nuevaPosicion = Vector3.zero;
-        }
+        Debug.Log("Hola");
+        if (_enemigoFSM.Jugador != null) { }
 
+
+        Vector3 direccion = (_enemigoFSM.Jugador.position - transform.position).normalized;
+        transform.Translate(direccion * (_velocidad * Time.deltaTime));
     }
+    
+
+
     private void Awake()
     {
         _enemigoFSM = GetComponent<EnemigoFSM>();
@@ -28,10 +28,6 @@ public class SeguirAJugadorAccion : AccionFSM
     // Update is called once per frame
     void Update()
     {
-        if (_enemigoFSM.Jugador != null)
-        {
-            // Calcula la nueva posición hacia la que se moverá el enemigo
-            _nuevaPosicion = _enemigoFSM.Jugador.position;
-        }
+
     }
 }
