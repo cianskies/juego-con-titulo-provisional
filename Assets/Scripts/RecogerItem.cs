@@ -8,11 +8,12 @@ public class RecogerItem : MonoBehaviour
     
 
     private ControlesJugador _controlesJugador;
+    private TextoItem _textoCreadoItem;
 
     protected bool _sePuedeRecoger;
     public ItemData Item { get { return _item; } }
 
-    private void Awake()
+    public virtual void Awake()
     {
         _controlesJugador=new ControlesJugador();
     }
@@ -29,17 +30,38 @@ public class RecogerItem : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    private void MostrarNombre()
+    {
+        Vector3 posicionTexto=new Vector3(0,1,0);
+        Color color = Color.white;
+        if(_item is Arma)
+        {
+            color = Color.yellow;
+        }
+        _textoCreadoItem=ItemTextoManager.Instancia.MostrarMensaje(_item.Nombre, transform.position + posicionTexto, color);
+
+    }
+    private void OcultarNombre()
+    {
+        if(_textoCreadoItem!=null)
+        {
+
+            Destroy(_textoCreadoItem.gameObject);
+        }
+    }
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            MostrarNombre();
             _sePuedeRecoger = true;
         }
     }
-    protected void OnTriggerExit2D(Collider2D collision)
+    public virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            OcultarNombre();
             _sePuedeRecoger = false;
         }
     }

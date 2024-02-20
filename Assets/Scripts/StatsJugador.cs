@@ -15,8 +15,6 @@ public class StatsJugador : ScriptableObject
     public float AmmoBase;
     public float PorcentajeCritBase;
     public float AtaqueCriticoBase;
-    public float SuerteBase;
-    public float GilesBase;
     //Extra
 
     [Header("Stats")]
@@ -29,7 +27,6 @@ public class StatsJugador : ScriptableObject
     public float Dinero;
     public float PorcentajeCrit;
     public float AtaqueCritico;
-    public float Suerte;
 
     [Header("Arma")]
     public float CosteAmmo;

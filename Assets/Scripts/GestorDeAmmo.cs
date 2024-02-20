@@ -25,7 +25,6 @@ public class GestorDeAmmo : MonoBehaviour
     private void OnEnable()
     {
         Ammo.InstanciarBala += AnhadirAListaBala;
-        Ammo.DestruirBala += EliminarBalaDeLista;
     }
     private void OnDisable()
     {
@@ -42,10 +41,5 @@ public class GestorDeAmmo : MonoBehaviour
             _listaAmmoEnPantalla.Add(bala);
         }
     }
-    private void EliminarBalaDeLista(Ammo bala)
-    {
-        _listaAmmoEnPantalla.Remove(bala);
-    }
-
 
 }

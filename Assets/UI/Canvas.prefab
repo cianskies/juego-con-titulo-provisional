@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7840707149163005701}
   - component: {fileID: 6201610773844698202}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: MonedasText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   _rondaText: {fileID: 967588416813602968}
   _enemigosEnPisoText: {fileID: 6114831018670103969}
   _temporizador: {fileID: 0}
-  _monedasText: {fileID: 0}
+  _monedasText: {fileID: 6201610773844698202}
 --- !u!1 &5019502491624691620
 GameObject:
   m_ObjectHideFlags: 0

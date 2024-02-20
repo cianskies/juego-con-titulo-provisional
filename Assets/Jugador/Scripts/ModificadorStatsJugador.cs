@@ -18,7 +18,6 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
         _statsJugador.Ammo = 1;
         _statsJugador.AmmoBase = 1;
         _statsJugador.PorcentajeCrit = _statsJugador.PorcentajeCritBase;
-        _statsJugador.Suerte = _statsJugador.SuerteBase;
         _statsJugador.AtaqueCritico = _statsJugador.AtaqueCriticoBase;
         _statsJugador.Dinero = _statsJugador.DineroBase;
         
@@ -58,10 +57,6 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
     public void SubirLVL(float lvl)
     {
         _statsJugador.LVL += lvl;
-    }
-    public void SubirSuerte(float lvl)
-    {
-        _statsJugador.Suerte += lvl;
     }
     public void GanarDinero(float euro)
     {

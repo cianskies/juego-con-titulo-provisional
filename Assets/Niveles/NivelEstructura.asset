@@ -15,7 +15,7 @@ MonoBehaviour:
   Niveles:
   - Nombre: Nivel1
     Pisos:
-    - {fileID: 8383301167081655231, guid: 26967301ae06636469cb2a7d46551ebd, type: 3}
+    - {fileID: 8383301167081655231, guid: b7f798d5f5444854f8d043de2064be1e, type: 3}
   - Nombre: Nivel2
     Pisos:
     - {fileID: 8383301167081655231, guid: 6617a56a161c8dd419fcfc0c072dca7e, type: 3}
