@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmaScriptFusilSemiAutomatico : ArmaScriptPistola
+public class ArmaScriptEscopeta : ArmaScriptPistola
 {
-    [SerializeField]protected float _cadenciaDisparo=0.1f;
-    [SerializeField] protected float _cadenciaEntreDisparos = 0.3f;
+    [SerializeField] protected float _cadenciaEntreDisparos = 0.6f;
     protected bool _sePuedeUsar=true;
     public override void UsarArma()
     {
@@ -23,7 +22,6 @@ public class ArmaScriptFusilSemiAutomatico : ArmaScriptPistola
         for (int i = 0; i < 3; i++)
         {
             base.UsarArma();
-            yield return new WaitForSeconds(_cadenciaDisparo);
         }
         yield return new WaitForSeconds(_cadenciaEntreDisparos);
         _sePuedeUsar =true;

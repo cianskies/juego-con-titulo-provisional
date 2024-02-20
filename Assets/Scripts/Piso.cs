@@ -20,9 +20,10 @@ public class Piso : MonoBehaviour
     [SerializeField] private Tilemap _tileMapExtra;
 
     [SerializeField] private PisoContenido _estructura;
-    [SerializeField] private Puerta _puerta1;
+    [SerializeField] private Puerta[] _puertas;
 
     [SerializeField] private Vector3 _posicionInicial;
+    
 
     private List<StatsEnemigo> _listaEnemigosEnPisoActual;
 
@@ -56,8 +57,9 @@ public class Piso : MonoBehaviour
     }
     private void Start()
     {
-        BloquearPuertas();
+        BloquearPuertasYAbrirTodas();
         GetTiles();
+        InstanciarMonedas();
 
     }
     private void GetTiles()
@@ -92,9 +94,12 @@ public class Piso : MonoBehaviour
 
     private void SiguienteRonda()
     {
-        _estructura.TemporizadorActivo = true;
+        
         if (getNumeroRondasRestantes() > 0)
         {
+            _estructura.TemporizadorActivo = true;
+            BloquearPuertas();
+            InstanciarMonedas();
             ++_estructura.RondaActual;
             //Debug.Log("Comienza la ronda " + _estructura.RondaActual);
             InstanciarEnemigosDeRonda();
@@ -114,6 +119,7 @@ public class Piso : MonoBehaviour
         {
             SiguienteRonda();
         }
+
     }
 
     private void InstanciarEnemigosDeRonda()
@@ -128,7 +134,16 @@ public class Piso : MonoBehaviour
         }
     }
 
-
+    private void InstanciarMonedas()
+    {
+        int random = Random.Range(_estructura.MinMonedasRonda,_estructura.MaxMonedasRonda);
+        for (int i = 0; i < random; i++)
+        {
+            
+            GameObject moneda = Instantiate(ObtenerMonedaRandom(), ObtenerTileDisponible(), Quaternion.identity, transform);
+            Debug.Log("Se instancia una moenda en " + moneda.transform.position);
+        }
+    }
 
     public Vector3 ObtenerTileDisponible() {
         List<Vector3> tilesLibres=(from tile in _listaTiles where tile.Value select tile.Key).ToList();
@@ -146,6 +161,11 @@ public class Piso : MonoBehaviour
         EnemigoFSM[] enemigosDePiso = _estructura.EnemigosDePiso;
         int random = Random.Range(0, enemigosDePiso.Length);
         return enemigosDePiso[random];
+    }private GameObject ObtenerMonedaRandom()
+    {
+        GameObject[] monedasDePiso = _estructura.MonedasDePiso;
+        int random = Random.Range(0, monedasDePiso.Length);
+        return monedasDePiso[random];
     }
     private int getNumeroRondasRestantes()
     {
@@ -153,13 +173,36 @@ public class Piso : MonoBehaviour
     }
     private void DesbloquearPuertas()
     {
+        for (int i = 0; i < _puertas.Length; i++)
+        {
+            _puertas[i].Abrir();
+        }
         //Debug.Log("Las Puertas se han desbloqueado");
-        _puerta1.Abrir();
+
     }
     private void BloquearPuertas()
     {
+        for (int i = 0; i < _puertas.Length; i++)
+        {
+            _puertas[i].Cerrar();
+        }
         //Debug.Log("Las Puertas se han bloqueado");
-        _puerta1.Cerrar();
+        
+    }    private void BloquearPuertasYAbrirTodas()
+    {
+        //Debug.Log("Las Puertas se han bloqueado");
+        for (int i = 0; i < _puertas.Length; i++)
+        {
+            switch (_puertas[i].Tipo)
+            {
+                case TipoPuerta.SalidaNivel:
+                    _puertas[i].Cerrar();
+                    break;
+                default:
+                    _puertas[i].Abrir();
+                    break;
+            }
+        }
     }
     private void RespuestaEventoNotificarMuerteEnemigo(StatsEnemigo enemigo)
     {
@@ -167,6 +210,10 @@ public class Piso : MonoBehaviour
         if(getNumeroRondasRestantes()==0 && _listaEnemigosEnPisoActual.Count == 0) {
             DesbloquearPuertas();
             Debug.Log("Nivel superado");
+        }
+        else if (_listaEnemigosEnPisoActual.Count == 0)
+        {
+            BloquearPuertasYAbrirTodas();
         }
     }
     private void OnEnable()

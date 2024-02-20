@@ -10,6 +10,7 @@ public class RecogerItem : MonoBehaviour
     private ControlesJugador _controlesJugador;
 
     protected bool _sePuedeRecoger;
+    public ItemData Item { get { return _item; } }
 
     private void Awake()
     {

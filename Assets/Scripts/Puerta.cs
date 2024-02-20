@@ -2,11 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TipoPuerta
+{
+    Tienda,
+    SalidaNivel,
+    Tesoro,
+    Secreto
+}
 public class Puerta : MonoBehaviour
 {
     public bool Cerrada;
+    [SerializeField]private TipoPuerta _tipo;
 
     private Animator _animator;
+
+    public TipoPuerta Tipo { get { return _tipo; } }
 
     public void Awake()
     {

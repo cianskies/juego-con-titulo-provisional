@@ -15,8 +15,12 @@ public class PisoContenido : ScriptableObject
     public bool BotonEstaPulsado;
 
     public EnemigoFSM[] EnemigosDePiso;
+    public GameObject[] MonedasDePiso;
     public int MinEnemigosRonda;
     public int MaxEnemigosRonda;
+
+    public int MinMonedasRonda;
+    public int MaxMonedasRonda;
 
 
     

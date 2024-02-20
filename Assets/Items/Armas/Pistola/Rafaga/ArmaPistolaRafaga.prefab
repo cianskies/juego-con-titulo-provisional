@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &788589536409035012
+--- !u!1 &2051268046913163071
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,59 +8,59 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7029424947901554112}
-  - component: {fileID: 8064076573574279704}
-  - component: {fileID: -6467918049022736446}
+  - component: {fileID: 4021206465504200443}
+  - component: {fileID: 53453055643056090}
+  - component: {fileID: 3021697641835844265}
   m_Layer: 12
-  m_Name: ArmaPistolaPistolita
+  m_Name: ArmaPistolaRafaga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7029424947901554112
+--- !u!4 &4021206465504200443
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788589536409035012}
+  m_GameObject: {fileID: 2051268046913163071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7724011982815138690}
-  - {fileID: 5205206451419802328}
+  - {fileID: 2716009563997574256}
+  - {fileID: 888340071657126326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8064076573574279704
+--- !u!114 &53453055643056090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788589536409035012}
+  m_GameObject: {fileID: 2051268046913163071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7016e3c940b0ad4fba844ba53a94968, type: 3}
+  m_Script: {fileID: 11500000, guid: d54756d144cf6c84c86fb3848364d538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _posicionDisparo: {fileID: 5205206451419802328}
-  _arma: {fileID: 11400000, guid: 37066811ee3b915448795e5684bcf2fe, type: 2}
+  _posicionDisparo: {fileID: 888340071657126326}
+  _arma: {fileID: 11400000, guid: 49d2ba9bc3e723c4ba631e5f1aa67dce, type: 2}
   _ammo: {fileID: -4934921245982233471, guid: f9dd913c2af2ede4e8b5ae9ee319523c, type: 3}
---- !u!95 &-6467918049022736446
+--- !u!95 &3021697641835844265
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788589536409035012}
+  m_GameObject: {fileID: 2051268046913163071}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7c91696cae063df49a38b6de97e4d264, type: 2}
+  m_Controller: {fileID: 22100000, guid: 063138ce58857454497b804f35a08d39, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -71,7 +71,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &5467796257468621208
+--- !u!1 &6797147084142907637
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,8 +79,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7724011982815138690}
-  - component: {fileID: 5419296967905960318}
+  - component: {fileID: 2716009563997574256}
+  - component: {fileID: 576766310372724778}
   m_Layer: 12
   m_Name: Sprite
   m_TagString: Untagged
@@ -88,28 +88,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7724011982815138690
+--- !u!4 &2716009563997574256
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467796257468621208}
+  m_GameObject: {fileID: 6797147084142907637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.338, y: 0.126, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7029424947901554112}
+  m_Father: {fileID: 4021206465504200443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5419296967905960318
+--- !u!212 &576766310372724778
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467796257468621208}
+  m_GameObject: {fileID: 6797147084142907637}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -144,9 +144,9 @@ SpriteRenderer:
   m_SortingLayerID: -877115257
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67c87fbb983006f439431f2aa8c4e9ef, type: 3}
+  m_Sprite: {fileID: 1108610917, guid: 8c96084329be24c469752565aa4d6ff3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.46153846, y: 0.46153846}
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &5921866754862364980
+--- !u!1 &7247011040166840019
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5205206451419802328}
+  - component: {fileID: 888340071657126326}
   m_Layer: 12
   m_Name: PuntoSalidaDisparo
   m_TagString: Untagged
@@ -171,18 +171,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5205206451419802328
+--- !u!4 &888340071657126326
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5921866754862364980}
+  m_GameObject: {fileID: 7247011040166840019}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.705, y: 0.087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7029424947901554112}
+  m_Father: {fileID: 4021206465504200443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

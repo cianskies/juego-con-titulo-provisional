@@ -10,7 +10,7 @@ public class SeguirAJugadorAccion : AccionFSM
 
     public override void EjecutarAccionFSM()
     {
-        Debug.Log("Hola");
+        //Debug.Log("Hola");
         if (_enemigoFSM.Jugador != null) { }
 
 
