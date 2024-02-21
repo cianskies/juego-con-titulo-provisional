@@ -1138,7 +1138,7 @@ MonoBehaviour:
   _temporizadorText: {fileID: 1860877447655299246}
   _rondaText: {fileID: 967588416813602968}
   _enemigosEnPisoText: {fileID: 6114831018670103969}
-  _temporizador: {fileID: 0}
+  _temporizador: {fileID: 8506419832650536952}
   _monedasText: {fileID: 6201610773844698202}
 --- !u!1 &5019502491624691620
 GameObject:
@@ -2086,6 +2086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1805699317924842078}
   - component: {fileID: 4132450233252802830}
+  - component: {fileID: 8506419832650536952}
   m_Layer: 5
   m_Name: Temporizador
   m_TagString: Untagged
@@ -2122,6 +2123,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7580691656517994851}
   m_CullTransparentMesh: 1
+--- !u!114 &8506419832650536952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580691656517994851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52c46b7269d1364493bc8829bd1afdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7867648925983490221
 GameObject:
   m_ObjectHideFlags: 0
