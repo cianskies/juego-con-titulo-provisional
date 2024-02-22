@@ -142,6 +142,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4400533709627973288, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
+      propertyPath: sonidos.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d2f72a480e1c63343983d7cb1471d6fa, type: 3}
+    - target: {fileID: 4400533709627973288, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
+      propertyPath: sonidos.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400533709627973288, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
+      propertyPath: sonidos.Array.data[0].Nombre
+      value: AtaqueJugador1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400533709627973288, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
+      propertyPath: sonidos.Array.data[0].volume
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6830654349677984003, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.2261305

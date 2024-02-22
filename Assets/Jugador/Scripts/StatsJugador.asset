@@ -20,7 +20,12 @@ MonoBehaviour:
   AmmoBase: 250
   PorcentajeCritBase: 5
   AtaqueCriticoBase: 2
-  SuerteBase: 1
+  Descripcion: Tiene ganas de pegar a unos cuantos bichos
+  Nombre: Clotario
+  Disponible: 1
+  CosteDeMejora: 5
+  CosteDesbloqueo: 0
+  MultiplicadorMejora: 0
   LVL: 1
   Salud: 15
   Escudo: 5
@@ -29,6 +34,5 @@ MonoBehaviour:
   Dinero: 0
   PorcentajeCrit: 5
   AtaqueCritico: 2
-  Suerte: 1
   CosteAmmo: 0
-  IconoJugador: {fileID: 0}
+  IconoJugador: {fileID: -1571109400, guid: 1e95538edc87d0c49a5295d814abdd55, type: 3}

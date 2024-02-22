@@ -16,6 +16,12 @@ public class StatsJugador : ScriptableObject
     public float PorcentajeCritBase;
     public float AtaqueCriticoBase;
     //Extra
+    public string Descripcion;
+    public string Nombre;
+    public bool Disponible;
+    public float CosteDeMejora;
+    public float CosteDesbloqueo;
+    [Range(0f, 100)] public int MultiplicadorMejora;
 
     [Header("Stats")]
     public float LVL;

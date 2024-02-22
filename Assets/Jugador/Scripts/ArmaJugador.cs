@@ -130,6 +130,7 @@ public class ArmaJugador : ArmaPersonaje
         {
             if (SuficienteAmmo())
             {
+            AudioManager.Instancia.Play("AtaqueJugador1");
                 _armaUsandose = true;
                 //Debug.Log("Pium");
                 _arma.UsarArma();

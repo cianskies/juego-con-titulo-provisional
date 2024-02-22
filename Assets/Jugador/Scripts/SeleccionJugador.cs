@@ -10,6 +10,6 @@ public class SeleccionJugador : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+        MenuManager.Insatancia.ClickSobreSeleccionJugador(this);
     }
 }
