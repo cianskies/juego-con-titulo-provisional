@@ -20,6 +20,7 @@ public class NivelManager : MonoBehaviour
 
 
     public static NivelManager Instancia;
+    public GameObject Jugador { get { return _jugadorPrefab; } }
     public Transform JugadorPosicion {  get { return _jugadorPosicion; }set { _jugadorPosicion = value; } }
     public ModificadorStatsJugador StatsJugador {  get { return _statsJugador; } set { _statsJugador = value; } }
     private void Awake()

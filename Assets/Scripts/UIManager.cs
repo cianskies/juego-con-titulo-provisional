@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -27,8 +28,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _monedasText;
 
-    //falta hacer el delay del sprint
-
+    [Header("Paneles")]
+    [SerializeField] private GameObject _gameOverCanvas;
+    [SerializeField] private GameObject _rondasCanvas;
+    [SerializeField] private GameObject _statsJugadorCanvas;
 
     void Update()
     {
@@ -48,4 +51,34 @@ public class UIManager : MonoBehaviour
 
         _monedasText.text = $"{_statsJugador.Dinero}";
     }
+    public void ReintentarBoton()
+    {
+        Debug.Log("Haai");
+        SceneManager.LoadScene("EnPartidaEscena");
+    }
+    public void LobbyBoton()
+    {
+        Debug.Log("Heyy");
+        SceneManager.LoadScene("Inicio");
+    }
+    public void SalirBoton()
+    {
+
+    }
+    private void RespuestaEventoGameOverJugador()
+    {
+        _gameOverCanvas.SetActive(true);
+        _rondasCanvas.SetActive(false);
+        _statsJugadorCanvas.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        ModificadorStatsJugador.EventoGameOverJugador += RespuestaEventoGameOverJugador;
+    }
+    private void OnDisable()
+    {
+        ModificadorStatsJugador.EventoGameOverJugador -= RespuestaEventoGameOverJugador;
+    }
+
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db62f26c42a9c604085f08c978bfd664
+guid: 165b10ebfc2df6e4a985a430eeb438e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_animacion_0
+      name: medusa (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -124,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83c80cd453257c74e8855f4e7874397e
-      internalID: 2008134236
+      spriteID: 66952e6c091aa66429f99d43fab15316
+      internalID: 326383627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_animacion_1
+      name: medusa (1)_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 448
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -145,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be2705338cb35ac44aac23e5c76629d7
-      internalID: -431626705
+      spriteID: 94149b865c79e494fa13c9a248df2e7c
+      internalID: 1224454935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_animacion_2
+      name: medusa (1)_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 448
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -166,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b012cbb8692af2940b42cc74bade2847
-      internalID: 557660506
+      spriteID: 4d22cbc5194ad2a4ebbcaba6162ab254
+      internalID: 835402818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_animacion_3
+      name: medusa (1)_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -187,18 +187,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 582581ca50907554280646ad59a2842e
-      internalID: -1808784917
+      spriteID: e06d9a030815762489c87ea3bccd5693
+      internalID: -1600447707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_animacion_4
+      name: medusa (1)_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 384
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -208,113 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0805aaa8a460fd4eab2b165f6ab321b
-      internalID: 1268812903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_animacion_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09a1bb45e55e5ce4680ad982a1730801
-      internalID: -1776822166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_animacion_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a05210b9ffef0e479e23dde4cff17f7
-      internalID: 1701154804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_animacion_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f665c279362b71478feb9a051d81b74
-      internalID: 501260406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_animacion_8
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a98f616c275a6f64c9d4e10d5905f0e9
-      internalID: -1667973863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_animacion_9
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b48ccce191e9d645bd1e7bed6dae886
-      internalID: 1180052569
+      spriteID: f8c482ae64a73054999dc6e5b3dd0a12
+      internalID: -1356621885
       vertices: []
       indices: 
       edges: []
@@ -330,16 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_animacion_0: 2008134236
-      sprite_animacion_1: -431626705
-      sprite_animacion_2: 557660506
-      sprite_animacion_3: -1808784917
-      sprite_animacion_4: 1268812903
-      sprite_animacion_5: -1776822166
-      sprite_animacion_6: 1701154804
-      sprite_animacion_7: 501260406
-      sprite_animacion_8: -1667973863
-      sprite_animacion_9: 1180052569
+      medusa (1)_0: 326383627
+      medusa (1)_1: 1224454935
+      medusa (1)_2: 835402818
+      medusa (1)_3: -1600447707
+      medusa (1)_4: -1356621885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

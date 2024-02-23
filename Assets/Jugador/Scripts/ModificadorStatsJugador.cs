@@ -1,12 +1,17 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
 {
     [SerializeField] private StatsJugador _statsJugador;
+    public static event Action EventoGameOverJugador;
+
     
 
     public void Awake()
@@ -62,6 +67,34 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
     {
         _statsJugador.Dinero+= euro;
     }
+
+    public void GastarAmmo(float ammo)
+    {
+        _statsJugador.Ammo -= ammo;
+    }
+    public bool CosteAmmoSuficiente(float costeAmmo)
+    {
+        if (_statsJugador.Ammo >= costeAmmo)
+        {
+            return true;
+        }
+        else { return false; }
+
+    }
+    public void GastarDinero(float euro)
+    {
+        if (_statsJugador.Dinero > 0 && (_statsJugador.Dinero - euro) > -1)
+        {
+            _statsJugador.Dinero -= euro;
+
+
+        }
+
+    }
+    public float GetDinero()
+    {
+        return _statsJugador.Dinero;
+    }
     public void RecibirDanho(float hp)
     {
         if(_statsJugador.Escudo>0)
@@ -76,46 +109,20 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
         else
         {
             _statsJugador.Salud -= hp;
-            if (_statsJugador.Salud < 0)
+            if (_statsJugador.Salud <= 0)
             {
                 _statsJugador.Salud = 0;
-                Destroy(gameObject);
+                GameOverJugador();
             }
         }
 
     }
-    public void GastarAmmo(float ammo)
+    private void GameOverJugador()
     {
-        _statsJugador.Ammo -= ammo;
-
-
-        
-
-    }
-    public bool CosteAmmoSuficiente(float costeAmmo)
-    {
-        if (_statsJugador.Ammo >= costeAmmo)
-        {
-            return true;
-        }
-        else { return false; }
+        EventoGameOverJugador?.Invoke();
+        NivelManager.Instancia.Jugador.SetActive(false);
         
     }
-    public void GastarDinero(float euro)
-    {
-        if (_statsJugador.Dinero > 0 && (_statsJugador.Dinero - euro) > -1) 
-        {
-            _statsJugador.Dinero -= euro;
 
 
-        }
-
-    }
-
-    public float GetDinero()
-    {
-        return _statsJugador.Dinero;
-    }
-
-    //proximamente subidas de nivel multiplicadores de danho y movidas similares
 }

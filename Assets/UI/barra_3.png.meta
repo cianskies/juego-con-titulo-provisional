@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a955e1bd638f57459b53dac869a805a
+guid: 051802b6ed3a541498c0208554f79ce8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puertas_laterales (1)_0
+      name: barra_3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 64
-        height: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dea650b51bb6204db1bd04d11217fb4
-      internalID: -1034363941
+      spriteID: 4dbbc02ac7caf0a4fad8f615856ddf3f
+      internalID: 712038995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puertas_laterales (1)_1
+      name: barra_3_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
         width: 64
-        height: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f69ed5dd7f62394eb24f7a1c1fb21ab
-      internalID: 1594062809
+      spriteID: 1b3dce0060186cb4fb53f9f9a2a0b147
+      internalID: 2094087466
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      puertas_laterales (1)_0: -1034363941
-      puertas_laterales (1)_1: 1594062809
+      barra_3_0: 712038995
+      barra_3_1: 2094087466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

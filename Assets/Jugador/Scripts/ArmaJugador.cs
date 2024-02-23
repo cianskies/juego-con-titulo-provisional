@@ -10,6 +10,7 @@ public class ArmaJugador : ArmaPersonaje
     private ControlesJugador _controlesJugador;
     private ModificadorStatsJugador _mStatsJugador;
     private CampoVisionJugador _visionJugador;
+    private Animator _animator;
 
     
     private int _armaIndex;
@@ -20,7 +21,9 @@ public class ArmaJugador : ArmaPersonaje
         _controlesJugador=new ControlesJugador();
         _movimientoJugador=GetComponent<JugadorMovimiento>();
         _mStatsJugador = GetComponent<ModificadorStatsJugador>();
-        _visionJugador=GetComponentInChildren<CampoVisionJugador>();
+        _animator = GetComponent<Animator>();
+        _visionJugador =GetComponentInChildren<CampoVisionJugador>();
+
         
         
 
@@ -131,6 +134,7 @@ public class ArmaJugador : ArmaPersonaje
             if (SuficienteAmmo())
             {
             AudioManager.Instancia.Play("AtaqueJugador1");
+            _animator.SetTrigger("Ataque");
                 _armaUsandose = true;
                 //Debug.Log("Pium");
                 _arma.UsarArma();

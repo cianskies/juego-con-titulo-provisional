@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5565870200665449716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9092511584134471225}
+  - component: {fileID: 1152268579134958619}
+  m_Layer: 5
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9092511584134471225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565870200665449716}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -493.67926, y: -359.13818, z: -9698.693}
+  m_LocalScale: {x: 107.98355, y: 107.98355, z: 107.98355}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1152268579134958619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565870200665449716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bdcbbd7434d974a935e87aef1ab7b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsJugador: {fileID: 11400000, guid: 09c9119a7eabbc449b0424bfd6064263, type: 2}
+  _barraSalud: {fileID: 0}
+  _saludText: {fileID: 0}
+  _barraEscudo: {fileID: 0}
+  _escudoText: {fileID: 0}
+  _barraMagia: {fileID: 0}
+  _ammoText: {fileID: 0}
+  _temporizadorText: {fileID: 0}
+  _rondaText: {fileID: 0}
+  _enemigosEnPisoText: {fileID: 0}
+  _temporizador: {fileID: 0}
+  _monedasText: {fileID: 0}
+  _gameOverCanvas: {fileID: 0}
+  _rondasCanvas: {fileID: 0}
+  _statsJugadorCanvas: {fileID: 0}

@@ -9,11 +9,13 @@ public class AtacarAccion : AccionFSM
     private EnemigoFSM _enemigoFSM;
     private float _temporizadorUsoArma;
     private float _delay;
+    private Animator _animator;
 
     private void Awake()
     {
         _armaEnemigo=GetComponent<ArmaEnemigo>();
         _enemigoFSM = GetComponent<EnemigoFSM>();
+        _animator = GetComponent<Animator>();
     }
     private void Start()
     {
@@ -30,6 +32,7 @@ public class AtacarAccion : AccionFSM
             _temporizadorUsoArma-=Time.deltaTime;
             if (_temporizadorUsoArma <= 0)
             {
+                _animator.SetTrigger("AtaqueEnemigo");
                 _armaEnemigo.UsarArma();
                 _temporizadorUsoArma = _delay;
             }
