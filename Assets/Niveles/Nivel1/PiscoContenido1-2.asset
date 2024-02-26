@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6989d3044bb73e24a9346c6153c89318, type: 3}
-  m_Name: PiscoContenido1-1
+  m_Name: PiscoContenido1-2
   m_EditorClassIdentifier: 
-  NumeroRondas: 5
-  RondaActual: 1
-  SegundosPorRonda: 15
-  NivelSuperado: 1
+  NumeroRondas: 6
+  RondaActual: 3
+  SegundosPorRonda: 20
+  NivelSuperado: 0
   TemporizadorActivo: 1
   BotonEstaPulsado: 1
   EnemigosDePiso:
@@ -24,7 +24,8 @@ MonoBehaviour:
   MonedasDePiso:
   - {fileID: 7758145909711562209, guid: b4b866e3496da4943b290f9bb5d31e29, type: 3}
   - {fileID: 6412744718965663559, guid: f0f1898d04be90d4593e0c7f37f8881d, type: 3}
-  MinEnemigosRonda: 2
-  MaxEnemigosRonda: 5
-  MinMonedasRonda: 2
-  MaxMonedasRonda: 4
+  - {fileID: 4145785059697765619, guid: dcbe4415e989dc9459a6f73236f73473, type: 3}
+  MinEnemigosRonda: 1
+  MaxEnemigosRonda: 6
+  MinMonedasRonda: 1
+  MaxMonedasRonda: 5

@@ -236,6 +236,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1125529889}
     - target: {fileID: 3388569898426902276, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
+      propertyPath: _ammoCanvas
+      value: 
+      objectReference: {fileID: 1192674473}
+    - target: {fileID: 3388569898426902276, guid: 2f4ac0c15c21c8d43a6085af6b4cbe07, type: 3}
       propertyPath: _barraMagia
       value: 
       objectReference: {fileID: 1117860201}
@@ -350,6 +354,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1192674473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3045376179037275410, guid: 169f614126cb83f48abcd90d5d2b559a, type: 3}
+  m_PrefabInstance: {fileID: 1298740896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1298740896
 PrefabInstance:
   m_ObjectHideFlags: 0

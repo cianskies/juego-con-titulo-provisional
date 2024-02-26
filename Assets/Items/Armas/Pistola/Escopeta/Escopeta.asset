@@ -22,8 +22,8 @@ MonoBehaviour:
   Delay: 0
   DispersionMin: -5
   DispersionMax: 5
-  Ammo: 300
-  CosteAmmo: 1
+  AmmoMax: 50
+  CosteAmmo: 4
   CosteCompra: 0
   CosteVenta: 0
   ArmaPrefab: {fileID: 5671995962228474763, guid: 7cd22964a5344b9448d392cb3f9e3987, type: 3}

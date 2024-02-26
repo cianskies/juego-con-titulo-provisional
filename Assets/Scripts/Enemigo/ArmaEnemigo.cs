@@ -5,8 +5,6 @@ using UnityEngine;
 public class ArmaEnemigo : ArmaPersonaje
 {
     [SerializeField] private ArmaScript _armaPorDefecto;
-
-
     public ArmaScript Arma { get { return _arma; } }
 
     protected override void Awake()

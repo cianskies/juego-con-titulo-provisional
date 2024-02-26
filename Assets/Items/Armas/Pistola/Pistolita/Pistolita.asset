@@ -22,7 +22,7 @@ MonoBehaviour:
   Delay: 0
   DispersionMin: -3
   DispersionMax: 3
-  Ammo: 250
+  AmmoMax: 50
   CosteAmmo: 1
   CosteCompra: 0
   CosteVenta: 0
