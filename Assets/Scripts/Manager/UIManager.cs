@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
+
 {
+    private UIManager __instancia;
     [Header("Debug")]
     [SerializeField] private StatsJugador _statsJugador;
 
@@ -34,6 +36,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _statsJugadorCanvas;
     [SerializeField] private GameObject _ammoCanvas;
 
+
+    public UIManager Instancia { get { return __instancia; }}
+
+    private void Awake()
+    {
+        __instancia = this;
+    }
     void Update()
     {
         _saludText.text = $"{_statsJugador.Salud}/{_statsJugador.SaludBase}";

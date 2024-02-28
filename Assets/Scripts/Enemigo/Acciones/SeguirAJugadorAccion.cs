@@ -18,7 +18,7 @@ public class SeguirAJugadorAccion : AccionFSM
             float distanciaEntreEnemigoYJugador = Vector3.Distance(transform.position, _enemigoFSM.Jugador.position);
             if (distanciaEntreEnemigoYJugador>_distanciaMinima)
             {
-                Debug.Log("La distancia entre el jugador y el enemigo es de " + distanciaEntreEnemigoYJugador);
+                //Debug.Log("La distancia entre el jugador y el enemigo es de " + distanciaEntreEnemigoYJugador);
                 Vector3 direccion = (_enemigoFSM.Jugador.position - transform.position).normalized;
                 transform.Translate(direccion * (_velocidad * Time.deltaTime));
             }
