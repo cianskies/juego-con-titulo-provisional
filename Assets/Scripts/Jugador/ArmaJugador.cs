@@ -19,6 +19,8 @@ public class ArmaJugador : ArmaPersonaje
     private int _armaIndex;
     private ArmaScript[] _armasEquipadas=new ArmaScript[2];
     private bool _armaUsandose=false;
+
+    public bool ArmaUsandose { get { return _armaUsandose; } }
     protected override void Awake()
     {
         _controlesJugador=new ControlesJugador();
@@ -150,14 +152,21 @@ public class ArmaJugador : ArmaPersonaje
             {
             AudioManager.Instancia.Play("AtaqueJugador1");
             _animator.SetTrigger("Ataque");
-                _armaUsandose = true;
+
                 //Debug.Log("Pium");
                 _arma.UsarArma();
                 _mStatsJugador.GastarAmmo(_arma.Arma.CosteAmmo);
                 _armaUsandose = false;
+            StartCoroutine(IEEstadoAtacar());
 
             }
         }
+    private IEnumerator IEEstadoAtacar()
+    {
+        _armaUsandose=true;
+        yield return new WaitForSeconds(0.3f);
+        _armaUsandose = false;
+    }
      private void OnEnable()
     {
         _controlesJugador.Enable();

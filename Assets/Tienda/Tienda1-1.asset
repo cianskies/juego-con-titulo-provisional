@@ -16,6 +16,6 @@ MonoBehaviour:
   itemsTienda:
   - {fileID: 7742416017576909376, guid: 5d884c736b70f2848bb99d3721860684, type: 3}
   - {fileID: 7742416017576909376, guid: 29d3786c09e84df45a3ed32ee676dff5, type: 3}
-  - {fileID: 4934373654733511847, guid: df19b702015385f429c23957b053b00c, type: 3}
   - {fileID: 4934373654733511847, guid: 8ddbb250301b52f49828b535678b0fc3, type: 3}
   - {fileID: 1947228152777713536, guid: abe48afdede02fb459c9587eaeac8091, type: 3}
+  - {fileID: 5558759864149298577, guid: 7d9fe7be2dad1c64080a68fec1fa476a, type: 3}

@@ -13,6 +13,12 @@ public class Piso : MonoBehaviour
 
     public static event NotificarTemporizador EstablecerNuevoTiempoTemporizador;
 
+
+    public delegate void InformarRondaUI(int ronda);
+    public static event InformarRondaUI ComienzaNuevaRonda;
+    public static event InformarRondaUI PararElTemporizador;
+
+
     [Header("Debug")]
     [SerializeField] private bool _mostrarDebug;
 
@@ -25,6 +31,9 @@ public class Piso : MonoBehaviour
 
     [Header("Posicion de jugador")]
     [SerializeField] private Vector3 _posicionInicial;
+
+    [SerializeField] private GameObject boton;
+    private Animator _animatorBoton;
     
     
     private List<StatsEnemigo> _listaEnemigosEnPisoActual;
@@ -45,6 +54,7 @@ public class Piso : MonoBehaviour
         _listaEnemigosEnPisoActual = new List<StatsEnemigo>();
         _estructura.TemporizadorActivo = false;
         _estructura.BotonEstaPulsado = false;
+        _animatorBoton=boton.GetComponent<Animator>();
        
     }
     private void Start()
@@ -85,12 +95,21 @@ public class Piso : MonoBehaviour
             //Si el temporizador esta activado, el boton pulsado y se pulsa el boton, recibes una
             //penalizacion de daño pero no iniciara la siguiente ronda
             Debug.Log("Has parado el temporizador");
+            PararElTemporizador?.Invoke(_estructura.RondaActual);
             _estructura.TemporizadorActivo = false;
             _estructura.BotonEstaPulsado = false;
             NivelManager.Instancia.Jugador.GetComponent<ModificadorStatsJugador>().RecibirDanho(3f);
         }
-    }
 
+        AnimarBoton();
+    }
+    private void AnimarBoton()
+    {
+        _animatorBoton.SetBool("Pulsado", _estructura.BotonEstaPulsado);
+        _animatorBoton.SetBool("Activado", _estructura.TemporizadorActivo
+            );
+
+    }
     private void SiguienteRonda()
     {
         //Las rondas funcionan asi
@@ -113,6 +132,7 @@ public class Piso : MonoBehaviour
     private IEnumerator IETemporizador()
     {
         EstablecerNuevoTiempoTemporizador?.Invoke(_estructura.SegundosPorRonda);
+        ComienzaNuevaRonda?.Invoke(_estructura.RondaActual);
 
         yield return new WaitForSeconds(_estructura.SegundosPorRonda);
 
@@ -225,6 +245,7 @@ public class Piso : MonoBehaviour
     {
         PisoBoton.EventoPulsarBoton += RespuestaEventoPulsarBoton;
         StatsEnemigo.EventoNotificarMuerteEnemigo += RespuestaEventoNotificarMuerteEnemigo;
+
     }
     private void OnDisable()
     {

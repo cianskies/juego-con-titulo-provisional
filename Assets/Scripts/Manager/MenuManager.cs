@@ -34,7 +34,7 @@ public class MenuManager :MonoBehaviour
     private static MenuManager _instancia;
     public static MenuManager Insatancia { get { return _instancia; }set { _instancia = value; } }
 
-    private SeleccionJugador _jugadorSeleccionado;
+     private SeleccionJugador _jugadorSeleccionado;
 
     /*
     [SerializeField] private bool _debug;*/
@@ -82,6 +82,7 @@ public class MenuManager :MonoBehaviour
     {
 
         _jugadorSeleccionado = jugador;
+        
         ComprobarSiEstaDesbloqueadoJugador();
         MostrarPanelDeJugador();
     }
@@ -101,6 +102,7 @@ public class MenuManager :MonoBehaviour
         if (_jugadorSeleccionado.ConfiguracionJugador.Disponible)
         {
             _jugadorSeleccionado.GetComponent<JugadorMovimiento>().enabled = true;
+            NivelManager.Instancia.Jugador=_jugadorSeleccionado.ConfiguracionJugador.Prefab;
             CerrarPanelJugador();
 
         }
@@ -139,5 +141,6 @@ public class MenuManager :MonoBehaviour
 public class PersonajeJugable
 {
     public JugadorMovimiento Jugador;
+    public StatsJugador StatsJugador;
     public Transform PosicionEnMenu;
 }

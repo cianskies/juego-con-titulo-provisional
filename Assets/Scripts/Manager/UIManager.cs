@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _rondasCanvas;
     [SerializeField] private GameObject _statsJugadorCanvas;
     [SerializeField] private GameObject _ammoCanvas;
+    [SerializeField] private TextMeshProUGUI _infoRondaText;
 
 
     public UIManager Instancia { get { return __instancia; }}
@@ -61,20 +62,18 @@ public class UIManager : MonoBehaviour
 
         _monedasText.text = $"{_statsJugador.Dinero}";
     }
-    public void ReintentarBoton()
-    {
-        Debug.Log("Haai");
-        SceneManager.LoadScene("EnPartidaEscena");
-    }
+
     public void LobbyBoton()
     {
         Debug.Log("Heyy");
         SceneManager.LoadScene("Inicio");
     }
-    public void SalirBoton()
+    private IEnumerator IETiempoRondaText()
     {
-
+        yield return new WaitForSeconds(2f);
+        _infoRondaText.gameObject.SetActive(false);
     }
+
     private void RespuestaEventoGameOverJugador()
     {
         _gameOverCanvas.SetActive(true);
@@ -89,6 +88,20 @@ public class UIManager : MonoBehaviour
     {
         _ammoCanvas.SetActive(false);
     }
+    private void RespuestaComenzarNuevaRonda(int numeroRonda)
+    {
+        _infoRondaText.gameObject.SetActive(true);
+        _infoRondaText.text=$"¡Comienza la ronda {numeroRonda}!";
+        StartCoroutine(IETiempoRondaText());
+
+    }
+    private void RespuestaPararTemporizador(int numero)
+    {
+        _infoRondaText.gameObject.SetActive(true);
+        _infoRondaText.text = $"¡Has parado el temporizador en la ronda {numero}!";
+        StartCoroutine(IETiempoRondaText());
+    }
+
 
     private void OnEnable()
     {
@@ -96,6 +109,8 @@ public class UIManager : MonoBehaviour
         ArmaJugador.EventoCambiarArmaSinCosteAmmo += RespuestaEventoCambiarArmaSinCosteAmmo;
 
         ModificadorStatsJugador.EventoGameOverJugador += RespuestaEventoGameOverJugador;
+        Piso.ComienzaNuevaRonda += RespuestaComenzarNuevaRonda;
+        Piso.PararElTemporizador += RespuestaPararTemporizador;
     }
     private void OnDisable()
     {

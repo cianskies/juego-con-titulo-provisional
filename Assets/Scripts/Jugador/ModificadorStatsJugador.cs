@@ -19,7 +19,6 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
         _statsJugador.Salud = _statsJugador.SaludBase;
         _statsJugador.Escudo = _statsJugador.EscudoBase;
         _statsJugador.LVL = _statsJugador.LVLBase;
-        _statsJugador.Ataque = _statsJugador.AtaqueBase;
         _statsJugador.Ammo = 1;
         _statsJugador.PorcentajeCrit = _statsJugador.PorcentajeCritBase;
         _statsJugador.AtaqueCritico = _statsJugador.AtaqueCriticoBase;
@@ -53,10 +52,6 @@ public class ModificadorStatsJugador : MonoBehaviour, IRecbirDanho
         {
             _statsJugador.Ammo=_statsJugador.AmmoMax;
         }
-    }
-    public void SubirAtaque(float atk)
-    {
-        _statsJugador.Ataque += atk;
     }
     public void SubirAtaqueCrit(float atk)
     {

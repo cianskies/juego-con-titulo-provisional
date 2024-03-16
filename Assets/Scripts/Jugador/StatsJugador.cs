@@ -10,10 +10,10 @@ public class StatsJugador : ScriptableObject
 
     public float SaludBase;
     public float EscudoBase;
-    public float AtaqueBase;
     public float DineroBase;
     public float PorcentajeCritBase;
     public float AtaqueCriticoBase;
+    public GameObject Prefab;
     //Extra
     public string Descripcion;
     public string Nombre;
@@ -27,7 +27,6 @@ public class StatsJugador : ScriptableObject
 
     public float Salud;
     public float Escudo;
-    public float Ataque;
     public float Ammo;
     public float AmmoMax;
     public float Dinero;

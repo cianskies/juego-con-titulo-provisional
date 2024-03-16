@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class JugadorMovimiento : MonoBehaviour
 {
+
     // Start is called before the first frame update
     [Header("Speec")]
     private float _velocidadMax=7;
     [SerializeField]private float _velocidadActual;
+
 
     [Header("Sprint")]
      private float _velocidadSprint=20;
@@ -15,7 +17,7 @@ public class JugadorMovimiento : MonoBehaviour
     private float _delaySprint = 2f;
 
     [SerializeField] private bool _sprintActivado=false;
-    //añadir anim al hacer sprint
+  
 
 
 
@@ -23,16 +25,23 @@ public class JugadorMovimiento : MonoBehaviour
     private ControlesJugador _controles;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    private ArmaJugador _armaJugador;
+
+
+    private const string _layerIdle = "Idle";
+    private const string _layerMovimiento = "Movimiento";
+    private const string _layerAtacar= "Ataque";
 
     [SerializeField]private Vector2 _direccion;
-    [SerializeField] private Vector2 _ultimaDireccion;
+    [SerializeField]private Vector2 _ultimaDireccion;
     private float _velocidad;
 
 
     private bool _inputActivado = true;
 
     public Vector2 Direccion=>_direccion;
-    public Vector2 UltimaDireccion => _ultimaDireccion;
+    public Vector2 UltimaDireccion=>_direccion;
+
 
 
     private void Awake()
@@ -41,6 +50,7 @@ public class JugadorMovimiento : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _armaJugador= GetComponent<ArmaJugador>();
 
     }
     void Start()
@@ -53,6 +63,7 @@ public class JugadorMovimiento : MonoBehaviour
         if (_inputActivado)
         {
             GetInput();
+            ActualizarLayerAnimacion();
             AnimarMovimiento();
         }
     }
@@ -71,9 +82,10 @@ public class JugadorMovimiento : MonoBehaviour
     private void GetInput()
     {
         _direccion = _controles.Movimiento.Mover.ReadValue<Vector2>();
-        if (_direccion != Vector2.zero)
-        {
+        if (_direccion != Vector2.zero) { 
+        
             _ultimaDireccion = _direccion;
+        
         }
 
         _velocidadActual = Mathf.Clamp(_direccion.magnitude, 0.0f, 1.0f);
@@ -89,29 +101,19 @@ public class JugadorMovimiento : MonoBehaviour
     }
     private void AnimarMovimiento()
     {
-        GirarPersonaje();
-        _animator.SetFloat("Velocidad", _velocidadActual);
-
-    }
-
-    public void GirarPersonaje()
-    {
-        if (_direccion != Vector2.zero)
+        if (_jugadorEnMovimiento())
         {
-            _animator.SetFloat("DireccionX", _direccion.x);
-            _animator.SetFloat("DireccionY", _direccion.y);
-
-            if (_direccion.x >= 0.1f)
-            {
-                _spriteRenderer.flipX = false;
-            }
-            else if (_direccion.x < 0f)
-            {
-                _spriteRenderer.flipX = true;
-            }
-
+            _animator.SetFloat("X", _direccion.x);
+            _animator.SetFloat("Y", _direccion.y);
         }
+
     }
+
+    private bool _jugadorEnMovimiento()
+    {
+        return _velocidadActual > 0.0f;
+    }
+
     public void ReiniciarPosicionPersonaje()
     {
         transform.position = Vector2.down;
@@ -141,6 +143,30 @@ public class JugadorMovimiento : MonoBehaviour
     {
         yield return new WaitForSeconds(_delaySprint);
         _sprintActivado = false;
+    }
+
+    private void ActivarLayerAnimacion(string nombre)
+    {
+        for (int i = 0; i < _animator.layerCount; i++)
+        {
+            _animator.SetLayerWeight(i, 0);
+        }
+        _animator.SetLayerWeight(_animator.GetLayerIndex(nombre), 1);
+    }
+    private void ActualizarLayerAnimacion()
+    {
+        if (_armaJugador!=null&&_armaJugador.ArmaUsandose)
+        {
+            ActivarLayerAnimacion(_layerAtacar);
+        }
+        else if (_jugadorEnMovimiento())
+        {
+            ActivarLayerAnimacion(_layerMovimiento);
+        }
+        else
+        {
+            ActivarLayerAnimacion(_layerIdle);
+        }
     }
 
 }

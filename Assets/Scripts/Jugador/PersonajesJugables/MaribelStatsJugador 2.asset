@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8b7817aa0c82b4c93549661c50ae52, type: 3}
+  m_Name: MaribelStatsJugador 2
+  m_EditorClassIdentifier: 
+  LVLBase: 1
+  SaludBase: 10
+  EscudoBase: 10
+  DineroBase: 5
+  PorcentajeCritBase: 5
+  AtaqueCriticoBase: 4
+  Descripcion: Tiene que haber un personaje femenino o podemos meternos en un lio
+  Nombre: Maribel
+  Disponible: 1
+  CosteDeMejora: 5
+  CosteDesbloqueo: 0
+  MultiplicadorMejora: 0
+  LVL: 1
+  Salud: 15
+  Escudo: 5
+  Ammo: 212
+  AmmoMax: 0
+  Dinero: 0
+  PorcentajeCrit: 5
+  AtaqueCritico: 2
+  CosteAmmo: 0
+  IconoJugador: {fileID: -1571109400, guid: 1e95538edc87d0c49a5295d814abdd55, type: 3}
